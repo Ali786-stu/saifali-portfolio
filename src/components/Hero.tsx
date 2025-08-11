@@ -106,7 +106,7 @@ const Hero = () => {
               <h1 className="text-2xl md:text-6xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 Hi, I'm{" "}
                 <span className="text-[40px] lg:text-7xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                  Asad Alam
+                  Asad Alig
                 </span>
               </h1>
 
@@ -232,7 +232,7 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Profile Photo */}
-          <div className="flex justify-center lg:justify-end lg:mr-11 max-sm:-order-1">
+          <div className="flex justify-center lg:justify-end lg:mr-11 max-md:-order-1">
             <div className="relative lg:mb-32">
               {/* Profile Photo Container */}
               <div className="relative w-80 h-80 md:w-96 md:h-96">

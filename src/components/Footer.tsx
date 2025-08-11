@@ -8,7 +8,7 @@ const Footer = () => {
     { icon: Github, href: 'https://github.com/aligasad', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/asadalamalig/', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:asadalam4291@gmail.com', label: 'Email' },
+    { icon: Mail, href: 'mailto:ceo@asadalam.info', label: 'Email' },
   ];
 
   const quickLinks = [
@@ -70,7 +70,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-white">Get In Touch</h4>
             <div className="space-y-2 text-gray-400">
-              <p>asadalamalig@gmail.com</p>
+              <p>ceo@asadalam.info</p>
               <p><a href="tel:7417331926">+91 7417331926</a></p>
               <p>Lucknow, IN</p>
             </div>

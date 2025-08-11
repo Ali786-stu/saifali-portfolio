@@ -89,7 +89,7 @@ const Contact = () => {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    formData.append("access_key", "72e5aab6-9072-4d19-a165-14fea5a42c82");
+    formData.append("access_key", "fe3c558a-ed94-4849-802b-067bc4166fc7");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -135,19 +135,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "asadalamalig.com",
-      link: "asadalamalig.com",
+      value: "ceo@asadalam.info",
+      link: "ceo@asadalam.info",
     },
     {
       icon: Phone,
       title: "Phone",
       value: "+91 7417331926",
-      link: "tel:+15551234567",
+      link: "tel:+917417331925",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Lucknow, IN",
       link: "#",
     },
   ];
