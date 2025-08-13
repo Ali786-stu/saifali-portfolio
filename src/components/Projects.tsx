@@ -4,6 +4,7 @@ import ProjectModal from './ProjectModal';
 import img1 from '../assets/Screenshot (607).png';
 import workWhiz from '../assets/workwhiz.png';
 import zaphira from '../assets/zaphira.png';
+import expenseTracker from '../assets/expense-tracter.png';
 
 interface Project {
   id: number;
@@ -70,17 +71,17 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Weather Dashboard",
-      description: "A comprehensive weather dashboard with forecasts and interactive maps.",
-      fullDescription: "An advanced weather application providing detailed forecasts, interactive maps, and weather analytics. Features include location-based weather, severe weather alerts, historical data, and customizable widgets. Built with modern APIs and responsive design.",
-      image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Expense Tracker Web App",
+      description: "A smart and easy-to-use app to track expenses, manage budgets, and gain insights into your spending habits.",
+      fullDescription: "The Expense Tracker App is a smart and user-friendly tool designed to help individuals and businesses manage their finances with ease. It allows you to record income, track daily expenses, categorize spending, and visualize your financial habits. With an intuitive interface and real-time data insights, this app ensures you stay in control of your budget and achieve your savings goals effortlessly.",
+      image: expenseTracker,
       technologies: ["Vue.js", "Chart.js", "Weather API", "CSS Grid"],
-      githubUrl: "#",
-      liveUrl: "#",
+      githubUrl: "https://github.com/aligasad/Expense-Tracker",
+      liveUrl: "https://expense-tracker-xi-drab.vercel.app/",
       category: "app",
       duration: "2 months",
       status: true,
-      features: ["Interactive Maps", "Weather Alerts", "Data Visualization", "Location Services"]
+      features: ["Easy Expense & Income Tracking", "Categorization", "Data Visualization", "Budget Management"]
     }
   ];
 

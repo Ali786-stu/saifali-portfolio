@@ -33,11 +33,11 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const budgetOptions = [
-    "< $1,000",
-    "$1,000 - $3,000",
-    "$3,000 - $5,000",
-    "$5,000 - $10,000",
-    "$10,000+",
+    "< ₹10,000",
+    " ₹10,000 -  ₹30,000",
+    " ₹30,000 -  ₹50,000",
+    " ₹50,000 -  ₹1,00,000",
+    " ₹1,00,000+",
   ];
 
   const validateForm = (): boolean => {

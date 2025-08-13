@@ -1,14 +1,16 @@
 import React from 'react';
 import { Code, Smartphone, Globe, Palette, ShoppingCart, Search, Check, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
+  const navigate = useNavigate();
   const services = [
     {
       id: 1,
       icon: Globe,
       title: "Custom Website Development",
       description: "Professional, responsive websites built with modern technologies",
-      price: "$1,500 - $5,000",
+      price: "₹15,000 - ₹40,000",
       duration: "2-6 weeks",
       features: [
         "Responsive Design",
@@ -26,7 +28,7 @@ const Services = () => {
       icon: ShoppingCart,
       title: "E-Commerce Solutions",
       description: "Complete online stores with payment integration and inventory management",
-      price: "$3,000 - $8,000",
+      price: "₹40,000 - ₹80,000",
       duration: "4-8 weeks",
       features: [
         "Product Catalog",
@@ -44,7 +46,7 @@ const Services = () => {
       icon: Smartphone,
       title: "Mobile App Development",
       description: "Native and cross-platform mobile applications for iOS and Android",
-      price: "$5,000 - $15,000",
+      price: "₹80,000 - ₹1,50,000",
       duration: "6-12 weeks",
       features: [
         "Cross-platform Support",
@@ -59,28 +61,10 @@ const Services = () => {
     },
     {
       id: 4,
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Beautiful, user-centered designs that convert visitors into customers",
-      price: "$1,000 - $3,000",
-      duration: "1-3 weeks",
-      features: [
-        "User Research",
-        "Wireframing",
-        "Prototyping",
-        "Visual Design",
-        "Usability Testing",
-        "Design System"
-      ],
-      popular: false,
-      image: "https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      id: 5,
       icon: Code,
       title: "Web Application Development",
       description: "Complex web applications with advanced functionality and integrations",
-      price: "$4,000 - $12,000",
+      price: "₹1,00,000 - ₹1,80,000",
       duration: "6-10 weeks",
       features: [
         "Database Design",
@@ -92,31 +76,21 @@ const Services = () => {
       ],
       popular: false,
       image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      id: 6,
-      icon: Search,
-      title: "SEO & Performance Optimization",
-      description: "Improve your website's visibility and loading speed",
-      price: "$800 - $2,000",
-      duration: "2-4 weeks",
-      features: [
-        "Technical SEO Audit",
-        "Performance Optimization",
-        "Core Web Vitals",
-        "Schema Markup",
-        "Local SEO",
-        "Analytics Setup"
-      ],
-      popular: false,
-      image: "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ];
 
-  const handleContactClick = (serviceName: string) => {
-    // In a real application, this would navigate to the contact form with pre-filled service
+  // const handleContactClick = (serviceName: string) => {
+  //   // In a real application, this would navigate to the contact form with pre-filled service
     
-    alert(`Contact form opened for: ${serviceName}`);
+  //   alert(`Contact form opened for: ${serviceName}`);
+  // };
+
+  const handleContactClick = () => {
+    // Agar serviceName ko query params me bhejna hai
+    // navigate(`/contact?service=${encodeURIComponent(serviceName)}`);
+    
+    // Agar sirf contact page kholna hai:
+    navigate('/contact');
   };
 
   return (

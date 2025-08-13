@@ -14,8 +14,8 @@ import {
 } from "lucide-react";
 import myCV from "../assets/myCV2.pdf";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { motion } from "framer-motion";
-import myPic from '../assets/asadslfijj.jpg';
+import { AnimatePresence, motion } from "framer-motion";
+import myPic from "../assets/asadslfijj.jpg";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,6 +27,7 @@ const Hero = () => {
     "React js Development",
     "UI/UX Design & Prototyping",
     "E-commerce Solutions",
+    "Single-Page Solutions",
   ];
 
   const stats = [
@@ -115,8 +116,22 @@ const Hero = () => {
                 <span className="animate-blink">|</span>
               </div>
 
-              <div className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-8 h-6">
-                {skills[currentSkill]}
+              <div className="h-6 mb-8 flex justify-start">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={skills[currentSkill]}
+                    initial={{ opacity: 0, scale: 0.5, rotate: -15 }}
+                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                    exit={{ opacity: 0, scale: 0.5, rotate: 15 }}
+                    transition={{
+                      duration: 0.6,
+                      ease: [0.6, -0.05, 0.01, 0.99],
+                    }}
+                    className="text-lg text-rose-800 dark:text-rose-600 font-medium"
+                  >
+                    {skills[currentSkill]}
+                  </motion.div>
+                </AnimatePresence>
               </div>
 
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
