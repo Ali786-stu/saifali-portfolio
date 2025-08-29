@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon, Home, Briefcase, DollarSign, Mail } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
+import logoA from '../assets/asadlogo.png';
 
 interface NavbarProps {
   currentPage: string;
@@ -43,9 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Asad Alam
-            </h1>
+            <img src={logoA} alt="" className='h-14' />
           </div>
 
           {/* Desktop Menu */}
