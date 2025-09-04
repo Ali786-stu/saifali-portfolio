@@ -1,6 +1,16 @@
-import React from 'react';
-import { Code, Smartphone, Globe, Palette, ShoppingCart, Search, Check, Star } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import {
+  Code,
+  Smartphone,
+  Globe,
+  Palette,
+  ShoppingCart,
+  Search,
+  Check,
+  Star,
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { span } from "framer-motion/client";
 
 const Services = () => {
   const navigate = useNavigate();
@@ -9,7 +19,8 @@ const Services = () => {
       id: 1,
       icon: Globe,
       title: "Custom Website Development",
-      description: "Professional, responsive websites built with modern technologies",
+      description:
+        "Professional, responsive websites built with modern technologies",
       price: "₹15,000 - ₹40,000",
       duration: "2-6 weeks",
       features: [
@@ -18,16 +29,18 @@ const Services = () => {
         "CMS Integration",
         "Performance Optimization",
         "Cross-browser Compatibility",
-        "SSL Certificate Setup"
+        "SSL Certificate Setup",
       ],
       popular: false,
-      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image:
+        "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
       id: 2,
       icon: ShoppingCart,
       title: "E-Commerce Solutions",
-      description: "Complete online stores with payment integration and inventory management",
+      description:
+        "Complete online stores with payment integration and inventory management",
       price: "₹40,000 - ₹80,000",
       duration: "4-8 weeks",
       features: [
@@ -36,16 +49,18 @@ const Services = () => {
         "Payment Gateway",
         "Inventory Management",
         "Order Tracking",
-        "Admin Dashboard"
+        "Admin Dashboard",
       ],
       popular: true,
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image:
+        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
       id: 3,
       icon: Smartphone,
       title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications for iOS and Android",
+      description:
+        "Native and cross-platform mobile applications for iOS and Android",
       price: "₹80,000 - ₹1,50,000",
       duration: "6-12 weeks",
       features: [
@@ -54,16 +69,18 @@ const Services = () => {
         "Offline Functionality",
         "App Store Deployment",
         "User Authentication",
-        "Data Synchronization"
+        "Data Synchronization",
       ],
       popular: false,
-      image: "https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image:
+        "https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=600",
     },
     {
       id: 4,
       icon: Code,
       title: "Web Application Development",
-      description: "Complex web applications with advanced functionality and integrations",
+      description:
+        "Complex web applications with advanced functionality and integrations",
       price: "₹1,00,000 - ₹1,80,000",
       duration: "6-10 weeks",
       features: [
@@ -72,25 +89,22 @@ const Services = () => {
         "User Management",
         "Real-time Features",
         "Third-party Integrations",
-        "Scalable Architecture"
+        "Scalable Architecture",
       ],
       popular: false,
-      image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=600"
-    }
+      image:
+        "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
   ];
 
-  // const handleContactClick = (serviceName: string) => {
-  //   // In a real application, this would navigate to the contact form with pre-filled service
-    
-  //   alert(`Contact form opened for: ${serviceName}`);
-  // };
+  const whatsappNumber = "917417331926";
 
-  const handleContactClick = () => {
-    // Agar serviceName ko query params me bhejna hai
-    // navigate(`/contact?service=${encodeURIComponent(serviceName)}`);
-    
-    // Agar sirf contact page kholna hai:
-    navigate('/contact');
+  const handleContactClick = (serviceName: string) => {
+    const message = `Hello! I am interested in your "${serviceName}" service. Please share more details.`;
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
   };
 
   return (
@@ -98,10 +112,14 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            My <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Services</span>
+            My{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Services
+            </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            I offer comprehensive web development and design services to help bring your digital vision to life.
+            I offer comprehensive web development and design services to help
+            bring your digital vision to life.
           </p>
         </div>
 
@@ -112,7 +130,7 @@ const Services = () => {
               <div
                 key={service.id}
                 className={`relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group overflow-hidden ${
-                  service.popular ? 'ring-2 ring-blue-500 scale-105' : ''
+                  service.popular ? "ring-2 ring-blue-500 scale-105" : ""
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -159,14 +177,19 @@ const Services = () => {
                   </div>
 
                   <div className="space-y-3 mb-8">
-                    {service.features.slice(0, 4).map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center gap-3">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                        <span className="text-gray-600 dark:text-gray-400 text-sm">
-                          {feature}
-                        </span>
-                      </div>
-                    ))}
+                    {service.features
+                      .slice(0, 4)
+                      .map((feature, featureIndex) => (
+                        <div
+                          key={featureIndex}
+                          className="flex items-center gap-3"
+                        >
+                          <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                          <span className="text-gray-600 dark:text-gray-400 text-sm">
+                            {feature}
+                          </span>
+                        </div>
+                      ))}
                     {service.features.length > 4 && (
                       <div className="text-sm text-gray-500 dark:text-gray-400 pl-8">
                         +{service.features.length - 4} more features
@@ -175,14 +198,23 @@ const Services = () => {
                   </div>
 
                   <button
-                    onClick={() => handleContactClick(service.title)}
                     className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 ${
                       service.popular
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg hover:scale-105'
-                        : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg hover:scale-105"
+                        : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
                     }`}
+                    style={{ cursor: "pointer" }}
+                    onClick={
+                      service.popular
+                        ? () => navigate("/contact")
+                        : () => handleContactClick(service.title)
+                    }
                   >
-                    {service.popular ? 'Get Started Now' : 'Contact Me'}
+                    {service.popular ? (
+                      <span>Get Started Now</span>
+                    ) : (
+                      <span>Contact Me</span>
+                    )}
                   </button>
                 </div>
               </div>
@@ -196,10 +228,12 @@ const Services = () => {
               Need a Custom Solution?
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-              Don't see exactly what you're looking for? I'd love to discuss your unique requirements and create a custom solution that perfectly fits your needs.
+              Don't see exactly what you're looking for? I'd love to discuss
+              your unique requirements and create a custom solution that
+              perfectly fits your needs.
             </p>
             <button
-              onClick={() => handleContactClick('Custom Solution')}
+              onClick={() => handleContactClick("Custom Solution")}
               className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               Let's Talk About Your Project

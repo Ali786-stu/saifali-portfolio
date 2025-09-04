@@ -1,9 +1,16 @@
 import React from 'react'
+import Navbar from './components/Navbar'
+import { Outlet } from 'react-router-dom'
+import Footer from './components/Footer'
 
 function Layout() {
   return (
     <>
-      Hea
+      <Navbar />
+      <main className="transition-all duration-500 ease-in-out">
+        <Outlet />
+      </main>
+      <Footer />
     </>
   )
 }

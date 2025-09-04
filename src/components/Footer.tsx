@@ -1,5 +1,5 @@
-import React from 'react';
 import { Heart, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,10 +12,9 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { label: 'About', href: '#' },
-    { label: 'Projects', href: '#' },
-    { label: 'Services', href: '#' },
-    { label: 'Contact', href: '#' },
+    { label: 'Projects', href: 'projects' },
+    { label: 'Services', href: 'services' },
+    { label: 'Contact', href: 'contact' },
   ];
 
   return (

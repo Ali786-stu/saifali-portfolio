@@ -1,39 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon, Home, Briefcase, DollarSign, Mail } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
+import { Link, useLocation } from 'react-router-dom';
 import logoA from '../assets/asadlogo.png';
 
-interface NavbarProps {
-  currentPage: string;
-  setCurrentPage: (page: 'home' | 'projects' | 'services' | 'contact') => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) => {
+const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'projects', label: 'Projects', icon: Briefcase },
-    { id: 'services', label: 'Services', icon: DollarSign },
-    { id: 'contact', label: 'Contact', icon: Mail },
+    { id: 'home', label: 'Home', icon: Home, path: '/' },
+    { id: 'projects', label: 'Projects', icon: Briefcase, path: '/projects' },
+    { id: 'services', label: 'Services', icon: DollarSign, path: '/services' },
+    { id: 'contact', label: 'Contact', icon: Mail, path: '/contact' },
   ];
-
-  const handleNavClick = (page: 'home' | 'projects' | 'services' | 'contact') => {
-    setCurrentPage(page);
-    setIsOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
@@ -51,22 +41,23 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) => {
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => {
               const IconComponent = item.icon;
+              const isActive = location.pathname === item.path;
               return (
-                <button
+                <Link
                   key={item.id}
-                  onClick={() => handleNavClick(item.id as any)}
+                  to={item.path}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-200 ${
-                    currentPage === item.id
+                    isActive
                       ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
                       : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                   }`}
+                  onClick={() => setIsOpen(false)}
                 >
                   <IconComponent size={18} />
                   <span className="font-medium">{item.label}</span>
-                </button>
+                </Link>
               );
             })}
-            
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
@@ -97,19 +88,21 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) => {
           <div className="md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-800 py-4">
             {navItems.map((item) => {
               const IconComponent = item.icon;
+              const isActive = location.pathname === item.path;
               return (
-                <button
+                <Link
                   key={item.id}
-                  onClick={() => handleNavClick(item.id as any)}
+                  to={item.path}
                   className={`w-full flex items-center space-x-3 px-4 py-3 text-left transition-colors duration-200 ${
-                    currentPage === item.id
+                    isActive
                       ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
                       : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
                   }`}
+                  onClick={() => setIsOpen(false)}
                 >
                   <IconComponent size={20} />
                   <span className="font-medium">{item.label}</span>
-                </button>
+                </Link>
               );
             })}
           </div>
