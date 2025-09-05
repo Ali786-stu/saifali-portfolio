@@ -83,7 +83,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden bg-gray-800 dark:bg-gray-900">
+    <section className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden dark:bg-gray-800">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
