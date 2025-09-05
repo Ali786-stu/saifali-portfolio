@@ -265,7 +265,7 @@ const Hero = () => {
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
                   <img
                     src={myPic}
-                    alt="John Doe - Profile"
+                    alt="Asad Alam - Profile"
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
