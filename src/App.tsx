@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Routes, Route, data } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Hero from './components/Hero';
 import Projects from './components/Projects';
@@ -49,7 +49,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-[#1f2937] dark:bg-gray-900 transition-colors duration-300">
       <Navbar />
       <main className="transition-all duration-500 ease-in-out">
         <Routes>

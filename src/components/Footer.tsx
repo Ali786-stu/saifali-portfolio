@@ -1,31 +1,30 @@
-import { Heart, Github, Linkedin, Twitter, Mail } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Heart, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/aligasad', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/asadalamalig/', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:ceo@asadalam.info', label: 'Email' },
+    { icon: Github, href: "https://github.com/aligasad", label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/asadalamalig/",
+      label: "LinkedIn",
+    },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Mail, href: "mailto:ceo@asadalam.info", label: "Email" },
   ];
 
   const quickLinks = [
-    { label: 'Projects', href: 'projects' },
-    { label: 'Services', href: 'services' },
-    { label: 'Contact', href: 'contact' },
+    { label: "Projects", href: "projects" },
+    { label: "Services", href: "services" },
+    { label: "Contact", href: "contact" },
   ];
 
-  const getInTouch = [
-    'ceo@asadalam.info',
-    '+91 7417331926',
-    'Lucknow IN'
-  ]
+  const getInTouch = ["ceo@asadalam.info", "+91 7417331926", "Lucknow IN"];
 
   return (
     <footer className="bg-gray-900 dark:bg-black text-white py-12">
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
@@ -34,10 +33,11 @@ const Footer = () => {
               Asad Alam
             </h3>
             <p className="text-gray-400 mb-6 max-w-md">
-              Full-Stack Developer & UI/UX Designer passionate about creating 
-              beautiful and functional digital experiences. Let's build something amazing together.
+              Full-Stack Developer & UI/UX Designer passionate about creating
+              beautiful and functional digital experiences. Let's build
+              something amazing together.
             </p>
-            
+
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => {
                 const IconComponent = social.icon;
@@ -55,12 +55,15 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+          <div className="flex  md:w-[50vw] ">
+            {/* Quick Links */}
+          <div className="w-[50%] sm:w-full">
+            <h4 className="text-lg font-semibold mb-4 text-white">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
-                <li key={index} >
+                <li key={index}>
                   <a
                     href={link.href}
                     data-cursorpointermini={true}
@@ -74,28 +77,48 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Get In Touch</h4>
+          <div className="w-[50%] sm:w-full">
+            <h4 className="text-lg font-semibold mb-4 text-white">
+              Get In Touch
+            </h4>
             <div className="space-y-2 text-gray-400">
               {getInTouch.map((item, idx) => (
-                <li key={idx} className='list-none'>
-                  <p data-cursorpointermini={true} className='text-gray-400 hover:text-[#6f9ffa] transition-colors duration-300'>{item}</p>
+                <li key={idx} className="list-none">
+                  <p
+                    data-cursorpointermini={true}
+                    className="text-gray-400 hover:text-[#6f9ffa] transition-colors duration-300"
+                  >
+                    {item}
+                  </p>
                 </li>
               ))}
             </div>
           </div>
+          </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm flex items-center gap-2" data-cursorpointer={true}>
-            © {currentYear} Asad Alam. Made with <Heart size={16} className="text-red-500" /> and React
+          <p
+            className="text-gray-400 text-sm flex items-center gap-2"
+            data-cursorpointer={true}
+          >
+            © {currentYear} Asad Alam. Made with{" "}
+            <Heart size={16} className="text-red-500" /> and React
           </p>
-          
+
           <div className="flex gap-6 text-sm text-gray-400 mt-4 md:mt-0">
-            <a href="#" className="hover:text-[#6f9ffa] transition-colors duration-300" data-cursorpointermini={true}>
+            <a
+              href="#"
+              className="hover:text-[#6f9ffa] transition-colors duration-300"
+              data-cursorpointermini={true}
+            >
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-[#6f9ffa] transition-colors duration-300" data-cursorpointermini={true}>
+            <a
+              href="#"
+              className="hover:text-[#6f9ffa] transition-colors duration-300"
+              data-cursorpointermini={true}
+            >
               Terms of Service
             </a>
           </div>
