@@ -1,5 +1,6 @@
 import { Heart, Github, Linkedin, Twitter, Mail } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,7 +22,20 @@ const Footer = () => {
     { label: "Contact", href: "contact" },
   ];
 
+  const navItems = [
+    { id: "home", label: "Home", path: "/" },
+    { id: "projects", label: "Projects", path: "/projects" },
+    { id: "services", label: "Services", path: "/services" },
+    { id: "contact", label: "Contact", path: "/contact" },
+  ];
+
   const getInTouch = ["ceo@asadalam.info", "+91 7417331926", "Lucknow IN"];
+
+  function onTop() {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+  }
 
   return (
     <footer className="bg-gray-900 dark:bg-black text-white py-12">
@@ -57,43 +71,37 @@ const Footer = () => {
 
           <div className="flex  md:w-[50vw] ">
             {/* Quick Links */}
-          <div className="w-[50%] sm:w-full">
-            <h4 className="text-lg font-semibold mb-4 text-white">
-              Quick Links
-            </h4>
-            <ul className="space-y-2">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    data-cursorpointermini={true}
-                    className="text-gray-400 hover:text-[#6f9ffa] transition-colors duration-300"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="w-[50%] sm:w-full">
-            <h4 className="text-lg font-semibold mb-4 text-white">
-              Get In Touch
-            </h4>
-            <div className="space-y-2 text-gray-400">
-              {getInTouch.map((item, idx) => (
-                <li key={idx} className="list-none">
-                  <p
-                    data-cursorpointermini={true}
-                    className="text-gray-400 hover:text-[#6f9ffa] transition-colors duration-300"
-                  >
-                    {item}
-                  </p>
-                </li>
-              ))}
+            <div className="w-[50%] sm:w-full">
+              <h4 className="text-lg font-semibold mb-4 text-white">
+                Quick Links
+              </h4>
+              <div className="space-y-2 flex flex-col ">
+                {navItems.map((item) => (
+                  <Link key={item.id} to={item.path} onClick={onTop} >
+                    <span className="">{item.label}</span>
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
+
+            {/* Contact Info */}
+            <div className="w-[50%] sm:w-full">
+              <h4 className="text-lg font-semibold mb-4 text-white">
+                Get In Touch
+              </h4>
+              <div className="space-y-2 text-gray-400">
+                {getInTouch.map((item, idx) => (
+                  <li key={idx} className="list-none">
+                    <p
+                      data-cursorpointermini={true}
+                      className="text-gray-400 hover:text-[#6f9ffa] transition-colors duration-300"
+                    >
+                      {item}
+                    </p>
+                  </li>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
