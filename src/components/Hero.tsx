@@ -83,7 +83,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden bg-[#111827] ">
+    <section className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden bg-gray-800 dark:bg-gray-900">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
@@ -316,7 +316,7 @@ const Hero = () => {
                   <div className="text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-gray-400 dark:text-white mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-rose-600 font-medium">
+                  <div className="text-sm line-clamp-1 text-gray-600 dark:text-gray-400 group-hover:text-rose-600 font-medium">
                     {stat.label}
                   </div>
                 </div>
