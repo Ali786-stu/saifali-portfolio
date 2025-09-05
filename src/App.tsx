@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Routes, Route, data } from 'react-router-dom';
 
 import Hero from './components/Hero';
 import Projects from './components/Projects';
@@ -8,6 +8,9 @@ import Contact from './components/Contact';
 import { useTheme } from './hooks/useTheme';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Misc from './components/Misc';
+
+import "./components/styles/misc.scss";
 
 function App() {
   const { theme } = useTheme();
@@ -15,6 +18,41 @@ function App() {
   useEffect(() => {
     document.documentElement.className = theme;
   }, [theme]);
+
+  const [loading, setLoading] = useState(true);
+
+  const dotCursor = (e: MouseEvent) => {
+    const cursor = document.querySelector(".cursor") as HTMLElement;
+    if (!cursor) return;
+    cursor.style.top = `${e.pageY - 14}px`;
+    cursor.style.left = `${e.pageX - 14}px`;
+
+    const element = e.target as HTMLElement;
+
+    if (element.getAttribute("data-cursorpointer")) {
+      cursor.classList.add("cursorHover");
+    } else if (element.getAttribute("data-cursorpointermini")) {
+      cursor.classList.add("cursorHoverMini");
+    } else if (element.getAttribute("data-cursorpointertext")) {
+      cursor.classList.add('cursorHoverText');
+    } else {
+      cursor.classList.remove("cursorHover");
+      cursor.classList.remove("cursorHoverMini");
+      cursor.classList.remove('cursorHoverText');
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", dotCursor);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => {
+      window.removeEventListener("mousemove", dotCursor);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
@@ -28,6 +66,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <Misc />
     </div>
   );
 }

@@ -1,4 +1,4 @@
- import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ChevronDown,
   Github,
@@ -104,14 +104,14 @@ const Hero = () => {
                 👋 Welcome to my portfolio
               </div>
 
-              <h1 className="text-2xl md:text-6xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              <h1 data-cursorpointer={true} className="text-2xl md:text-6xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 Hi, I'm{" "}
-                <span className="text-[40px] lg:text-7xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                <span data-cursorpointer={true} className="text-[40px] lg:text-7xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
                   Asad Alig
                 </span>
               </h1>
 
-              <div className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-4 h-8">
+              <div data-cursorpointertext={true} className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-4 h-8">
                 {text}
                 <span className="animate-blink">|</span>
               </div>
@@ -134,7 +134,7 @@ const Hero = () => {
                 </AnimatePresence>
               </div>
 
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
+              <p data-cursorpointertext={true} className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
                 I'm a passionate developer who loves creating beautiful,
                 functional, and user-friendly digital experiences. With
                 expertise in modern web technologies, I help businesses and
@@ -188,8 +188,12 @@ const Hero = () => {
                     key={index}
                     className="px-3 py-1 flex items-center gap-1 bg-gray-100 dark:bg-gray-800 text-gray-700 cursor-pointer dark:text-gray-300 rounded-full text-sm font-medium"
                   >
-                    <Icon icon={obj.icons} className="text-lg" />{" "}
-                    <span>{obj.tech} </span>
+                    <Icon
+                      data-cursorpointermini={true}
+                      icon={obj.icons}
+                      className="text-lg"
+                    />{" "}
+                    <span data-cursorpointermini={true}>{obj.tech} </span>
                   </div>
                 ))}
               </div>
@@ -234,12 +238,13 @@ const Hero = () => {
                 const IconComponent = social.icon;
                 return (
                   <a
+                    data-cursorpointermini={true}
                     key={index}
                     href={social.href}
                     aria-label={social.label}
                     className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
                   >
-                    <IconComponent size={24} />
+                    <IconComponent data-cursorpointermini={true} size={24} />
                   </a>
                 );
               })}
