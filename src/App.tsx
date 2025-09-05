@@ -5,7 +5,6 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Services from './components/Services';
 import Contact from './components/Contact';
-import { useTheme } from './hooks/useTheme';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Misc from './components/Misc';
@@ -13,11 +12,6 @@ import Misc from './components/Misc';
 import "./components/styles/misc.scss";
 
 function App() {
-  const { theme } = useTheme();
-
-  useEffect(() => {
-    document.documentElement.className = theme;
-  }, [theme]);
 
   const [loading, setLoading] = useState(true);
 

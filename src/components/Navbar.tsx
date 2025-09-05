@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon, Home, Briefcase, DollarSign, Mail } from 'lucide-react';
-import { useTheme } from '../hooks/useTheme';
 import { Link, useLocation } from 'react-router-dom';
 import logoA from '../assets/asadlogo.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, toggleTheme } = useTheme();
   const location = useLocation();
 
   useEffect(() => {
@@ -58,22 +56,22 @@ const Navbar: React.FC = () => {
                 </Link>
               );
             })}
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
             >
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
             >
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-            </button>
+            </button> */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
