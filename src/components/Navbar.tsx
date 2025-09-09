@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
                   onClick={() => setIsOpen(false)}
                 >
                   <IconComponent size={18} />
-                  <span className="font-medium">{item.label}</span>
+                  <span className="font-medium"> {item.label} </span>
                 </Link>
               );
             })}
