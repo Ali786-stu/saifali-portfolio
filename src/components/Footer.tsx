@@ -38,10 +38,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+            <h3 data-cursorpointer={true} className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
               Asad Alam
             </h3>
-            <p className="text-gray-400 mb-6 max-w-md">
+            <p data-cursorpointertext={true} className="text-gray-400 mb-6 max-w-md">
               Full-Stack Developer & UI/UX Designer passionate about creating
               beautiful and functional digital experiences. Let's build
               something amazing together.
@@ -79,14 +79,14 @@ const Footer = () => {
                     <Link
                       key={item.id}
                       to={item.path}
-                      className={` py-1 my-1 w-20 rounded-md transition-all duration-200 flex justify-center items-center text-[12px] gap-1 ${
+                      className={` py-1 my-1 w-20 rounded-md transition-all duration-200 flex justify-start pl-2 items-center text-[13px] gap-1 ${
                         isActive
                           ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
                           : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                       }`}
                       onClick={() =>{ setIsOpen(false), onTop()}}
                     >
-                      <IconComponent data-cursorpointermini={true} size={18} />
+                      <IconComponent data-cursorpointermini={true} size={14} />
                       <span
                         className="font-medium"
                         data-cursorpointermini={true}

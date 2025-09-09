@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-2">
           <div className="flex-shrink-0 sm:ml-6">
             <img src={logoA} alt="" className='h-14 w-14 bg-white rounded-full p-[2px] mb-[2px]' />
           </div>
