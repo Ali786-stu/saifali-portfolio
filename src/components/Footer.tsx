@@ -19,12 +19,6 @@ const Footer = () => {
     { icon: Mail, href: "mailto:ceo@asadalam.info", label: "Email" },
   ];
 
-  const quickLinks = [
-    { label: "Projects", href: "projects" },
-    { label: "Services", href: "services" },
-    { label: "Contact", href: "contact" },
-  ];
-
   const navItems = [
     { id: "home", label: "Home", icon: Home, path: "/" },
     { id: "projects", label: "Projects", icon: Briefcase, path: "/projects" },
@@ -92,7 +86,7 @@ const Footer = () => {
                           ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
                           : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                       }`}
-                      onClick={() => setIsOpen(false)}
+                      onClick={() =>{ setIsOpen(false), onTop()}}
                     >
                       <IconComponent data-cursorpointermini={true} size={18} />
                       <span
