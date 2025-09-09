@@ -76,7 +76,7 @@ const Footer = () => {
                     href={social.href}
                     aria-label={social.label}
                     data-cursorpointermini={true}
-                    className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-300 hover:text-blue-400"
+                    className="p-2 bg-gray-800 text-white hover:bg-gray-700 rounded-lg transition-colors duration-300 hover:text-blue-400"
                   >
                     <IconComponent data-cursorpointermini={true} size={20} />
                   </a>
