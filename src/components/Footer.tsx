@@ -77,8 +77,9 @@ const Footer = () => {
               </h4>
               <div className="space-y-2 flex flex-col ">
                 {navItems.map((item) => (
-                  <Link key={item.id} to={item.path} onClick={onTop} >
-                    <span className="">{item.label}</span>
+                  <Link key={item.id} to={item.path} onClick={onTop}  >
+                    <span data-cursorpointermini={true}
+                      className="text-gray-400 hover:text-[#6f9ffa] transition-colors duration-300">{item.label}</span>
                   </Link>
                 ))}
               </div>
