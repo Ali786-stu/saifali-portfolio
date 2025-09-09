@@ -2,6 +2,7 @@ import { Heart, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Sun, Moon, Home, Briefcase, DollarSign } from "lucide-react";
+import { link } from "framer-motion/client";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,7 +27,20 @@ const Footer = () => {
     { id: "contact", label: "Contact", icon: Mail, path: "/contact" },
   ];
 
-  const getInTouch = ["ceo@asadalam.info", "+91 7417331926", "Lucknow IN"];
+  const getInTouch = [
+    {
+      title: "ceo@asadalam.info",
+      link: 'mailto:ceo@asadalam.info',
+    },
+    {
+      title: '+91 7417331926',
+      link: 'tel:917417331926',
+    },
+    {
+      title: 'Lucknow, IN',
+      link: 'https://maps.app.goo.gl/z5yeXXg8fTVMm2pL8',
+    },
+  ];
 
   function onTop() {
     window.scrollTo(0, 0);
@@ -38,10 +52,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
-            <h3 data-cursorpointer={true} className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+            <h3
+              data-cursorpointer={true}
+              className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4"
+            >
               Asad Alam
             </h3>
-            <p data-cursorpointertext={true} className="text-gray-400 mb-6 max-w-md">
+            <p
+              data-cursorpointertext={true}
+              className="text-gray-400 mb-6 max-w-md"
+            >
               Full-Stack Developer & UI/UX Designer passionate about creating
               beautiful and functional digital experiences. Let's build
               something amazing together.
@@ -84,7 +104,9 @@ const Footer = () => {
                           ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
                           : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                       }`}
-                      onClick={() =>{ setIsOpen(false), onTop()}}
+                      onClick={() => {
+                        setIsOpen(false), onTop();
+                      }}
                     >
                       <IconComponent data-cursorpointermini={true} size={14} />
                       <span
@@ -108,12 +130,13 @@ const Footer = () => {
               <div className="space-y-2 text-gray-400">
                 {getInTouch.map((item, idx) => (
                   <li key={idx} className="list-none">
-                    <p
+                    <a
+                    href={item.link}
                       data-cursorpointermini={true}
-                      className="text-gray-400 hover:text-[#6f9ffa] transition-colors duration-300"
+                      className="text-gray-400 hover:text-[#6f9ffa] focus:outline-none hover:underline border-none transition-colors duration-300"
                     >
-                      {item}
-                    </p>
+                      {item.title}
+                    </a>
                   </li>
                 ))}
               </div>
