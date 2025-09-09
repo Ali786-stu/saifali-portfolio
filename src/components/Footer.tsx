@@ -29,9 +29,7 @@ const Footer = () => {
   const getInTouch = ["ceo@asadalam.info", "+91 7417331926", "Lucknow IN"];
 
   function onTop() {
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+    window.scrollTo(0, 0);
   }
 
   return (
@@ -81,7 +79,7 @@ const Footer = () => {
                     <Link
                       key={item.id}
                       to={item.path}
-                      className={`py-1 my-1 w-20 rounded-md transition-all duration-200 flex justify-center items-center text-[12px] gap-1 ${
+                      className={` py-1 my-1 w-20 rounded-md transition-all duration-200 flex justify-center items-center text-[12px] gap-1 ${
                         isActive
                           ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
                           : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
