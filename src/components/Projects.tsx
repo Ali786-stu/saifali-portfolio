@@ -5,6 +5,8 @@ import img1 from '../assets/Screenshot (607).png';
 import workWhiz from '../assets/workwhiz.png';
 import zaphira from '../assets/zaphira.png';
 import expenseTracker from '../assets/expense-tracter.png';
+import aligFoundation from '../assets/aligfoundation.png'
+import fitPlus from '../assets/fitPlus.png'
 
 interface Project {
   id: number;
@@ -49,28 +51,49 @@ const Projects = () => {
       image: workWhiz,
       technologies: ["React", "JavaScript", "Firebase", "Material-UI"],
       githubUrl: "https://github.com/aligasad/work-whiz",
-      liveUrl: "https://work-whiz-lime.vercel.app/",
+      liveUrl: "https://www.workwhizapp.in/",
       category: "web",
-      duration: "2 months",
-      status: true,
+      duration: "5 months",
+      status: false,
       features: ["Instant Worker Matching", "Wide Range of Services", "Verified Worker Profiles", "Direct Communication", "Affordable Pricing"]
     },
     {
       id: 3,
+      title: "Alig Foundation",
+      description: "Alig Foundation is a coaching platform dedicated to guiding students with quality education, mentorship, and career development.",
+      fullDescription: "Alig Foundation (accessible at aligfoundation.com) is an educational coaching website designed to provide structured learning, personalized mentorship, and comprehensive guidance for students. The platform focuses on empowering learners with academic excellence, exam preparation, and skill development through expert-led teaching and resources.",
+      image: aligFoundation, 
+      technologies: ["WordPress", "HTML", "Vanilla CSS"],
+      githubUrl: "/", 
+      liveUrl: "https://www.aligfoundation.com/",
+      category: "web",
+      duration: "1 Month",
+      status: true,
+      features: [
+        "Expert Coaching Programs",
+        "Personalized Mentorship",
+        "Online and Offline Classes",
+        "Exam Preparation Resources",
+        "Career Guidance & Counseling"
+      ]
+},
+
+    {
+      id: 4,
       title: "Noor By Shayan",
       description: "A stunning portfolio website showcasing creative work and professional services.",
       fullDescription: "Zaphira Organic offers premium Ayurvedic skincare and haircare products made from 100% organic ingredients. From herbal shampoos and glow serums to nourishing soaps, every product is handcrafted in small batches, blending ancient wisdom with modern sustainability — free from sulfates, parabens, and harmful chemicals.",
       image: zaphira,
       technologies: ["React", "Next.js", "Sanity CMS", "Framer Motion"],
       githubUrl: "#",
-      liveUrl: "#",
+      liveUrl: "https://zaphira-flax.vercel.app/",
       category: "web",
       duration: "3 month",
       status: false,      
       features: ["Smooth Animations", "CMS Integration", "SEO Optimized", "Contact Forms"]
     },
     {
-      id: 4,
+      id: 5,
       title: "Expense Tracker Web App",
       description: "A smart and easy-to-use app to track expenses, manage budgets, and gain insights into your spending habits.",
       fullDescription: "The Expense Tracker App is a smart and user-friendly tool designed to help individuals and businesses manage their finances with ease. It allows you to record income, track daily expenses, categorize spending, and visualize your financial habits. With an intuitive interface and real-time data insights, this app ensures you stay in control of your budget and achieve your savings goals effortlessly.",
@@ -82,7 +105,28 @@ const Projects = () => {
       duration: "2 months",
       status: true,
       features: ["Easy Expense & Income Tracking", "Categorization", "Data Visualization", "Budget Management"]
-    }
+    },
+    {
+  id: 4,
+  title: "Fit Plus",
+  description: "Fit Plus is a fitness app that helps users track workouts, discover exercises, and stay motivated with personalized plans.",
+  fullDescription: "Fit Plus is a modern exercise application built with React JS, Tailwind CSS, and API integrations to provide users with real-time workout data and personalized fitness plans. The app focuses on guiding users through structured exercise routines, tracking progress, and offering a variety of workouts to achieve health and fitness goals effectively.",
+  image: fitPlus, // replace with your imported image variable
+  technologies: ["React", "JavaScript", "Tailwind CSS", "API"],
+  githubUrl: "https://github.com/aligasad/Physical-Health", 
+  liveUrl: "https://fit-pulse-bay.vercel.app/", 
+  category: "mobile",
+  duration: "Ongoing",
+  status: true,
+  features: [
+    "Personalized Workout Plans",
+    "Exercise Library with API Integration",
+    "Real-Time Progress Tracking",
+    "Calorie & Fitness Monitoring",
+    "User-Friendly Tailored UI"
+  ]
+}
+
   ];
 
   const categories = [
