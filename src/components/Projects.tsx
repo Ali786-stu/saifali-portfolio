@@ -139,13 +139,22 @@ const Projects = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 min-h-screen">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 data-cursorpointer={true} className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2
+              data-cursorpointer={true}
+              className="text-4xl md:text-5xl font-bold text-white mb-6"
+            >
               My{" "}
-              <span data-cursorpointer={true} className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span
+                data-cursorpointer={true}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+              >
                 Projects
               </span>
             </h2>
-            <p data-cursorpointerText={true} className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p
+              data-cursorpointerText={true}
+              className="text-xl text-gray-400 max-w-3xl mx-auto"
+            >
               Here are some of my recent projects that showcase my skills in web
               development.
             </p>
@@ -155,7 +164,7 @@ const Projects = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {categories.map((category) => (
               <button
-                key={category.id} 
+                key={category.id}
                 onClick={() => setFilter(category.id)}
                 data-cursorpointer={true}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
@@ -187,10 +196,16 @@ const Projects = () => {
                 </div>
 
                 <div className="p-6">
-                  <h3 data-cursorpointerText={true} className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                  <h3
+                    data-cursorpointerText={true}
+                    className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300"
+                  >
                     {project.title}
                   </h3>
-                  <p data-cursorpointerMini={true} className="text-gray-400 mb-4 line-clamp-2">
+                  <p
+                    data-cursorpointerMini={true}
+                    className="text-gray-400 mb-4 line-clamp-2"
+                  >
                     {project.description}
                   </p>
 
@@ -227,7 +242,7 @@ const Projects = () => {
                     </a>
                     <a
                       href={project.liveUrl}
-                      data-cursorpointermini={true} 
+                      data-cursorpointermini={true}
                       className="p-2 bg-gray-800 text-gray-400 rounded-lg hover:bg-gray-700 transition-colors duration-300"
                     >
                       <ExternalLink size={20} data-cursorpointermini={true} />
@@ -253,19 +268,20 @@ const Projects = () => {
             onClose={() => setSelectedProject(null)}
           />
         )}
+
+        <div className="w-[100vw] grid place-items-center mt-8">
+          <button
+            onClick={() => {
+              navigate("/allProjects");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            data-cursorpointerMini={true}
+            className="px-6 py-2 bg-blue-600 text-white rounded-lg"
+          >
+            See All Projects
+          </button>
+        </div>
       </section>
-      <div className="w-[100vw] grid place-items-center mb-3">
-        <button
-          onClick={() => {
-            navigate("/allProjects");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-          data-cursorpointerMini={true}
-          className="px-6 py-2 bg-blue-600 text-white rounded-lg"
-        >
-          See All Projects
-        </button>
-      </div>
     </>
   );
 };
