@@ -6,7 +6,8 @@ import workWhiz from "../assets/workwhiz.png";
 import zaphira from "../assets/zaphira.png";
 import expenseTracker from "../assets/expense-tracter.png";
 import aligFoundation from "../assets/aligfoundation.png";
-import fitPlus from "../assets/fitPlus.png";
+import avadhMedicalHall from "../assets/avadhMedicalHall.png";
+import doctorApp from "../assets/doctorApp.png";
 import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
@@ -64,20 +65,27 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Alig Foundation",
+      title: "Doctor's Appointment System",
       description:
-        "Coaching platform guiding students with quality education & mentorship.",
+        "A doctor’s appointment booking platform where patients can schedule appointments online and doctors can manage them easily.",
       fullDescription:
-        "Alig Foundation (accessible at aligfoundation.com) is an educational platform...",
-      image: aligFoundation,
-      technologies: ["WordPress", "HTML", "Vanilla CSS"],
-      githubUrl: "/",
-      liveUrl: "https://www.aligfoundation.com/",
+        "Doctor's Appointment System is a web application built with React, TypeScript, and Firebase. Patients can book appointments online, while doctors have an admin dashboard to view, manage, and confirm bookings. Once confirmed, patients are notified instantly via their registered contact number.",
+      image: doctorApp, // import or path to your project image
+      technologies: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
+      githubUrl: "https://github.com/aligasad/doctor-appointment",
+      liveUrl: "https://doctoappbyalig.vercel.app/",
       category: "web",
-      duration: "1 Month",
+      duration: "4 months",
       status: true,
-      features: ["Expert Coaching Programs", "Mentorship", "Career Guidance"],
+      features: [
+        "Patient Appointment Booking",
+        "Doctor Admin Dashboard",
+        "Real-time Appointment Confirmation",
+        "SMS Notification on Confirmation",
+        "Firebase Authentication & Database",
+      ],
     },
+
     {
       id: 4,
       title: "Noor By Shayan",
@@ -110,19 +118,43 @@ const Projects = () => {
     },
     {
       id: 6,
-      title: "Fit Plus",
-      description: "A fitness app that helps users track workouts & plans.",
+      title: "Alig Foundation",
+      description:
+        "Coaching platform guiding students with quality education & mentorship.",
       fullDescription:
-        "Fit Plus is a modern exercise app built with React & Tailwind...",
-      image: fitPlus,
-      technologies: ["React", "JavaScript", "Tailwind CSS", "API"],
-      githubUrl: "https://github.com/aligasad/Physical-Health",
-      liveUrl: "https://fit-pulse-bay.vercel.app/",
-      category: "mobile",
-      duration: "Ongoing",
+        "Alig Foundation (accessible at aligfoundation.com) is an educational platform...",
+      image: aligFoundation,
+      technologies: ["WordPress", "HTML", "Vanilla CSS"],
+      githubUrl: "/",
+      liveUrl: "https://www.aligfoundation.com/",
+      category: "web",
+      duration: "1 Month",
       status: true,
-      features: ["Workout Plans", "Exercise Library", "Progress Tracking"],
+      features: ["Expert Coaching Programs", "Mentorship", "Career Guidance"],
     },
+    {
+       id: 7,
+  title: "Avadh Medical Hall & Skin Care",
+  description:
+    "A skin care clinic in Ayodhya offering appointments, treatment plans, and product services online.",
+  fullDescription:
+    "Avadh Medical Hall is a skin care and medical hall website. It allows patients to view services (like Acne, Vitiligo, Rosacea etc.), make an appointment, contact via phone or email, and view transformations and about us info. Built using React, TypeScript, Firebase for managing appointment data and authentication.",
+  image: avadhMedicalHall,  // import this in your code
+  technologies: ["React", "TypeScript", "Firebase", "CSS / Tailwind / MUI"], 
+  githubUrl: "https://github.com/yourusername/avadh-medical-hall", // if available
+  liveUrl: "https://avadhmedicalhall.com/",
+  category: "web",
+  duration: "2 months",
+  status: true,
+  features: [
+    "Make Appointment online",
+    "View Services and About Us sections",
+    "Contact via phone/email integration",
+    "Transformations gallery",
+    "Firebase backend for storing appointments",
+    "Responsive design"
+  ],
+    }
   ];
 
   const categories = [

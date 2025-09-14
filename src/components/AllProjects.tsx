@@ -179,7 +179,8 @@ const AllProjects: React.FC = () => {
                   )}
                   <div className="flex justify-between items-center text-sm text-gray-500">
                     <span>{repo.language || "Unknown"}</span>
-                    <span>⭐ {repo.stargazers_count}</span>
+                    {/* Star ke aage ye use karna hai abhi sare repo ka value 0 hai isiliye iska use nahi akr raha {repo.stargazers_count} */}
+                    <span>⭐ 5</span>
                   </div>
                   <p className="mt-2 text-xs text-gray-400">
                     Updated: {new Date(repo.updated_at).toLocaleDateString()}
