@@ -15,10 +15,19 @@
   box-shadow: 0 0 10px red;
   background-color: transparent;
 }
+
+.cursorHoverSm {
+  transform: scale(1.5);
+  border: none;
+  box-shadow: 0 0 10px red;
+  background-color: transparent;
+}
+
 .cursorHoverMini {
   transform: scale(0.5);
   box-shadow: 0 0 20px red;
 }
+
 .cursorHoverText {
   transform: scale(1.5);
   width: 4rem;

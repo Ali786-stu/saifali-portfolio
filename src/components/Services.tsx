@@ -107,13 +107,13 @@ const Services = () => {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 data-cursorpointer={true} className="text-4xl md:text-5xl font-bold text-white mb-6">
             My{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span data-cursorpointer={true} className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Services
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p data-cursorpointerText={true} className="text-xl text-gray-400 max-w-3xl mx-auto">
             I offer comprehensive web development and design services to help
             bring your digital vision to life.
           </p>
@@ -220,16 +220,17 @@ const Services = () => {
 
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 data-cursorpointer={true} className="text-2xl font-bold text-white mb-4">
               Need a Custom Solution?
             </h3>
-            <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+            <p data-cursorpointerText={true} className="text-gray-400 mb-6 max-w-2xl mx-auto">
               Don't see exactly what you're looking for? I'd love to discuss
               your unique requirements and create a custom solution that
               perfectly fits your needs.
             </p>
             <button
               onClick={() => handleContactClick("Custom Solution")}
+              data-cursorpointermini={true}
               className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               Let's Talk About Your Project

@@ -66,6 +66,7 @@ const Navbar: React.FC = () => {
                 <Link
                   key={item.id}
                   to={item.path}
+                  data-cursorpointerMini={true}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-200 ${
                     isActive
                       ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
@@ -75,8 +76,8 @@ const Navbar: React.FC = () => {
                     setIsOpen(false), onTop();
                   }}
                 >
-                  <IconComponent size={18} />
-                  <span className="font-medium"> {item.label} </span>
+                  <IconComponent data-cursorpointerMini={true} size={18} />
+                  <span data-cursorpointerMini={true} className="font-medium"> {item.label} </span>
                 </Link>
               );
             })}

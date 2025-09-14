@@ -151,13 +151,13 @@ const Contact = () => {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 data-cursorpointer={true} className="text-4xl md:text-5xl font-bold text-white mb-6">
             Get In{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span data-cursorpointer={true} className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Touch
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p data-cursorpointerText={true} className="text-xl text-gray-400 max-w-3xl mx-auto">
             Ready to start your project? Let's discuss your ideas and turn them
             into reality.
           </p>
@@ -166,7 +166,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Info */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold text-white mb-8">
+            <h3 data-cursorpointerText={true} className="text-2xl font-bold text-white mb-8">
               Let's Connect
             </h3>
 
@@ -176,17 +176,17 @@ const Contact = () => {
                 return (
                   <a
                     key={index}
-                    href={info.link}
+                    href={info.link} data-cursorpointerMini={true}
                     className="flex items-start gap-4 p-4 bg-gray-800 rounded-xl hover:shadow-md transition-all duration-300 group"
                   >
                     <div className="p-3 bg-blue-900/30 text-blue-400 rounded-lg group-hover:bg-blue-900/50 transition-colors duration-300">
-                      <IconComponent size={24} />
+                      <IconComponent size={24} data-cursorpointerMini={true} />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-1">
+                      <h4 data-cursorpointerMini={true} className="font-semibold text-white mb-1">
                         {info.title}
                       </h4>
-                      <p className="text-gray-400">{info.value}</p>
+                      <p data-cursorpointerMini={true} className="text-gray-400">{info.value}</p>
                     </div>
                   </a>
                 );
@@ -194,8 +194,8 @@ const Contact = () => {
             </div>
 
             <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-6 rounded-2xl text-white">
-              <h4 className="text-lg font-semibold mb-2">Quick Response</h4>
-              <p className="text-blue-100 text-sm">
+              <h4 data-cursorpointerText={true} className="text-lg font-semibold mb-2">Quick Response</h4>
+              <p data-cursorpointerText={true} className="text-blue-100 text-sm">
                 I typically respond to messages within 24 hours. For urgent
                 projects, don't hesitate to call directly.
               </p>
@@ -219,6 +219,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="name"
+                      data-cursorpointerMini={true}
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Full Name *
@@ -245,6 +246,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="email"
+                      data-cursorpointerMini={true}
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Email Address *
@@ -273,6 +275,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="subject"
+                      data-cursorpointerMini={true}
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Subject *
@@ -299,6 +302,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="budget"
+                      data-cursorpointerMini={true}
                       className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Project Budget (Optional)
@@ -323,6 +327,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="message"
+                    data-cursorpointerMini={true}
                     className="block text-sm font-medium text-gray-300 mb-2"
                   >
                     Message *

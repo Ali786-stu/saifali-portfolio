@@ -16,8 +16,11 @@ import myCV from "../assets/myCV2.pdf";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { AnimatePresence, motion } from "framer-motion";
 import myPic from "../assets/asadslfijj.jpg";
+import { link } from "framer-motion/client";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const [text, setText] = useState("");
   const fullText = "Full-Stack Developer & UI/UX Designer";
@@ -31,10 +34,15 @@ const Hero = () => {
   ];
 
   const stats = [
-    { icon: Code, number: "10+", label: "Projects Completed" },
-    { icon: Users, number: "5+", label: "Happy Clients" },
-    { icon: Award, number: "1+", label: "Years Experience" },
-    { icon: Coffee, number: "150+", label: "Cups of Coffee" },
+    {
+      icon: Code,
+      number: "10+",
+      label: "Projects Completed",
+      link: "/allProjects",
+    },
+    { icon: Users, number: "5+", label: "Happy Clients", link: "/" },
+    { icon: Award, number: "1+", label: "Years Experience", link: "/" },
+    { icon: Coffee, number: "150+", label: "Cups of Coffee", link: "/" },
   ];
 
   useEffect(() => {
@@ -97,14 +105,14 @@ const Hero = () => {
                 👋 Welcome to my portfolio
               </div>
 
-              <h1 className="text-2xl md:text-6xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+              <h1 data-cursorpointer={true} className="text-2xl md:text-6xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                 Hi, I'm{" "}
-                <span className="text-[40px] lg:text-7xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                <span data-cursorpointer={true} className="text-[40px] lg:text-7xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
                   Asad Alig
                 </span>
               </h1>
 
-              <div className="text-xl md:text-2xl text-gray-300 mb-4 h-8">
+              <div data-cursorpointerText={true} className="text-xl md:text-2xl text-gray-300 mb-4 h-8">
                 {text}
                 <span className="animate-blink">|</span>
               </div>
@@ -127,7 +135,7 @@ const Hero = () => {
                 </AnimatePresence>
               </div>
 
-              <p className="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
+              <p data-cursorpointerText={true} className="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
                 I'm a passionate developer who loves creating beautiful,
                 functional, and user-friendly digital experiences. With
                 expertise in modern web technologies, I help businesses and
@@ -143,16 +151,21 @@ const Hero = () => {
                   { tech: "Firebase", icons: "devicon:firebase" },
                   { tech: "SQL", icons: "logos:mysql-icon" },
                   { tech: "Java", icons: "logos:java" },
+                  { tech: "C Lang.", icons: "logos:c" },
                   { tech: "HTML", icons: "logos:html-5" },
                   { tech: "Tailwind CSS", icons: "logos:tailwindcss-icon" },
                   { tech: "BootStrap", icons: "logos:bootstrap" },
+                  { tech: "Vanilla CSS", icons: "logos:css-3" },
+                  { tech: "Git & GitHub", icons: "logos:git-icon" },
+                  { tech: "Vs Code", icons: "logos:visual-studio-code" },
                 ].map((obj, index) => (
                   <div
                     key={index}
+                    data-cursorpointerMini={true}
                     className="px-3 py-1 flex items-center gap-1 bg-gray-800 text-gray-300 rounded-full text-sm font-medium"
                   >
-                    <Icon icon={obj.icons} className="text-lg" />
-                    <span>{obj.tech}</span>
+                    <Icon icon={obj.icons} data-cursorpointerMini={true} className="text-lg" />
+                    <span data-cursorpointerMini={true}>{obj.tech}</span>
                   </div>
                 ))}
               </div>
@@ -161,6 +174,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
               <button
                 onClick={handleMail}
+                data-cursorpointer={true}
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2"
               >
                 <Mail size={20} />
@@ -169,6 +183,7 @@ const Hero = () => {
 
               <button
                 onClick={handleDownload}
+                data-cursorpointer={true}
                 className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-semibold rounded-full hover:bg-gray-800 hover:scale-105 transition-all duration-300 flex items-center gap-2"
               >
                 <Download size={20} />
@@ -200,9 +215,10 @@ const Hero = () => {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
+                    data-cursorpointerMini={true}
                     className="p-3 bg-gray-800 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300 text-gray-300 hover:text-blue-400"
                   >
-                    <IconComponent size={24} />
+                    <IconComponent data-cursorpointerMini={true} size={24} />
                   </a>
                 );
               })}
@@ -260,14 +276,22 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="cursor-pointer group text-center p-6 bg-gray-800/50 hover:bg-gray-700/50 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:scale-105 transition-all duration-300">
+                <div
+
+                  onClick={() => {
+                    navigate(stat.link);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  data-cursorpointer={true}
+                  className="cursor-pointer group text-center p-6 bg-gray-800/50 hover:bg-gray-700/50 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:scale-105 transition-all duration-300"
+                >
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:from-black group-hover:to-rose-600 text-white rounded-full mb-4">
-                    <IconComponent size={24} />
+                    <IconComponent size={24} data-cursorpointerText={true} />
                   </div>
-                  <div className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-gray-400">
+                  <div data-cursorpointerText={true} className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-gray-400">
                     {stat.number}
                   </div>
-                  <div className="text-sm line-clamp-1 text-gray-300 group-hover:text-rose-400 font-medium">
+                  <div data-cursorpointerText={true} className="text-sm line-clamp-1 text-gray-300 group-hover:text-rose-400 font-medium">
                     {stat.label}
                   </div>
                 </div>

@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Misc from './components/Misc';
 
 import "./components/styles/misc.scss";
+import AllProjects from './components/AllProjects';
 
 function App() {
 
@@ -57,6 +58,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/allProjects" element={<AllProjects />} />
         </Routes>
       </main>
       <Footer />

@@ -65,7 +65,7 @@ const Footer = () => {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    data-cursorpointermini={true}
+                    data-cursorpointerMini={true}
                     className="p-2 bg-gray-900 text-white hover:bg-gray-800 rounded-lg transition-colors duration-300 hover:text-blue-400"
                   >
                     <IconComponent data-cursorpointermini={true} size={20} />
@@ -89,6 +89,7 @@ const Footer = () => {
                     <Link
                       key={item.id}
                       to={item.path}
+                      data-cursorpointerMini={true}
                       className={`py-1 my-1 w-20 rounded-md transition-all duration-200 flex justify-start pl-2 items-center text-[13px] gap-1 ${
                         isActive
                           ? "text-blue-400 bg-gray-900"
@@ -98,10 +99,10 @@ const Footer = () => {
                         setIsOpen(false), onTop();
                       }}
                     >
-                      <IconComponent data-cursorpointermini={true} size={14} />
+                      <IconComponent data-cursorpointerMini={true} size={14} />
                       <span
                         className="font-medium"
-                        data-cursorpointermini={true}
+                        data-cursorpointerMini={true}
                       >
                         {item.label}
                       </span>
@@ -114,15 +115,19 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="w-[50%] sm:w-full">
               <h4 className="text-lg font-semibold mb-4 text-white">
-                Get In Touch
+                Get In Touch 
               </h4>
-              <div className="space-y-2 text-gray-400">
+              <div className="space-y-2 text-gray-400 group">
                 {getInTouch.map((item, idx) => (
-                  <li key={idx} className="list-none">
+                  <li
+                    key={idx}
+                    
+                    className="list-none group-hover:opacity-50 hover:!opacity-100 transition"
+                  >
                     <a
                       href={item.link}
-                      data-cursorpointermini={true}
-                      className="text-gray-400 hover:text-[#6f9ffa] focus:outline-none hover:underline border-none transition-colors duration-300"
+                      data-cursorpointerMini={true}
+                      className="text-gray-400 hover:text-[#6f9ffa] hover:underline transition-colors duration-300"
                     >
                       {item.title}
                     </a>
