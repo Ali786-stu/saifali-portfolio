@@ -166,7 +166,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Info */}
           <div className="lg:col-span-1">
-            <h3 data-cursorpointerText={true} className="text-2xl font-bold text-white mb-8">
+            <h3 data-cursorpointersm={true} className="text-2xl font-bold text-white mb-8">
               Let's Connect
             </h3>
 

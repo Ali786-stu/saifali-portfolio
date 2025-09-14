@@ -43,7 +43,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
             <h3
-              data-cursorpointer={true}
+              data-cursorpointersm={true}
               className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4"
             >
               Asad Alam
@@ -78,7 +78,7 @@ const Footer = () => {
           <div className="flex md:w-[50vw] ">
             {/* Quick Links */}
             <div className="w-[50%] sm:w-full">
-              <h4 className="text-lg font-semibold mb-4 text-white">
+              <h4 data-cursorpointersm={true} className="text-lg font-semibold mb-4 text-white">
                 Quick Links
               </h4>
               <div className="flex flex-col">
@@ -114,7 +114,7 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="w-[50%] sm:w-full">
-              <h4 className="text-lg font-semibold mb-4 text-white">
+              <h4 data-cursorpointersm={true} className="text-lg font-semibold mb-4 text-white">
                 Get In Touch 
               </h4>
               <div className="space-y-2 text-gray-400 group">

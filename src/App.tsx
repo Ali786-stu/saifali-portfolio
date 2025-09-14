@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Misc from './components/Misc';
+import Loader from './components/Loader';
 
 import "./components/styles/misc.scss";
 import AllProjects from './components/AllProjects';
@@ -30,10 +31,13 @@ function App() {
       cursor.classList.add("cursorHoverMini");
     } else if (element.getAttribute("data-cursorpointertext")) {
       cursor.classList.add('cursorHoverText');
+    } else if (element.getAttribute("data-cursorpointersm")) {
+      cursor.classList.add('cursorHoverSm')
     } else {
       cursor.classList.remove("cursorHover");
       cursor.classList.remove("cursorHoverMini");
       cursor.classList.remove('cursorHoverText');
+      cursor.classList.remove('cursorHoverSm');
     }
   };
 
@@ -48,6 +52,11 @@ function App() {
       window.removeEventListener("mousemove", dotCursor);
     };
   }, []);
+
+  // 🔥 Agar loading true hai to Loader dikhao
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">

@@ -112,7 +112,7 @@ const Hero = () => {
                 </span>
               </h1>
 
-              <div data-cursorpointerText={true} className="text-xl md:text-2xl text-gray-300 mb-4 h-8">
+              <div data-cursorpointersm={true} className="text-xl md:text-2xl text-gray-300 mb-4 h-8">
                 {text}
                 <span className="animate-blink">|</span>
               </div>
