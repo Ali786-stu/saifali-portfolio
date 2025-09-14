@@ -1,8 +1,7 @@
 import { Heart, Github, Linkedin, Twitter, Mail } from "lucide-react";
-import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, Sun, Moon, Home, Briefcase, DollarSign } from "lucide-react";
-import { link } from "framer-motion/client";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Home, Briefcase, DollarSign } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,18 +27,9 @@ const Footer = () => {
   ];
 
   const getInTouch = [
-    {
-      title: "ceo@asadalam.info",
-      link: 'mailto:ceo@asadalam.info',
-    },
-    {
-      title: '+91 7417331926',
-      link: 'tel:917417331926',
-    },
-    {
-      title: 'Lucknow, IN',
-      link: 'https://maps.app.goo.gl/z5yeXXg8fTVMm2pL8',
-    },
+    { title: "ceo@asadalam.info", link: "mailto:ceo@asadalam.info" },
+    { title: "+91 7417331926", link: "tel:917417331926" },
+    { title: "Lucknow, IN", link: "https://maps.app.goo.gl/z5yeXXg8fTVMm2pL8" },
   ];
 
   function onTop() {
@@ -47,7 +37,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white py-12">
+    <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
@@ -76,7 +66,7 @@ const Footer = () => {
                     href={social.href}
                     aria-label={social.label}
                     data-cursorpointermini={true}
-                    className="p-2 bg-gray-800 text-white hover:bg-gray-700 rounded-lg transition-colors duration-300 hover:text-blue-400"
+                    className="p-2 bg-gray-900 text-white hover:bg-gray-800 rounded-lg transition-colors duration-300 hover:text-blue-400"
                   >
                     <IconComponent data-cursorpointermini={true} size={20} />
                   </a>
@@ -85,7 +75,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex  md:w-[50vw] ">
+          <div className="flex md:w-[50vw] ">
             {/* Quick Links */}
             <div className="w-[50%] sm:w-full">
               <h4 className="text-lg font-semibold mb-4 text-white">
@@ -99,10 +89,10 @@ const Footer = () => {
                     <Link
                       key={item.id}
                       to={item.path}
-                      className={` py-1 my-1 w-20 rounded-md transition-all duration-200 flex justify-start pl-2 items-center text-[13px] gap-1 ${
+                      className={`py-1 my-1 w-20 rounded-md transition-all duration-200 flex justify-start pl-2 items-center text-[13px] gap-1 ${
                         isActive
-                          ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
-                          : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                          ? "text-blue-400 bg-gray-900"
+                          : "text-gray-300 hover:text-blue-400 hover:bg-gray-800"
                       }`}
                       onClick={() => {
                         setIsOpen(false), onTop();
@@ -113,8 +103,7 @@ const Footer = () => {
                         className="font-medium"
                         data-cursorpointermini={true}
                       >
-                        {" "}
-                        {item.label}{" "}
+                        {item.label}
                       </span>
                     </Link>
                   );
@@ -131,7 +120,7 @@ const Footer = () => {
                 {getInTouch.map((item, idx) => (
                   <li key={idx} className="list-none">
                     <a
-                    href={item.link}
+                      href={item.link}
                       data-cursorpointermini={true}
                       className="text-gray-400 hover:text-[#6f9ffa] focus:outline-none hover:underline border-none transition-colors duration-300"
                     >

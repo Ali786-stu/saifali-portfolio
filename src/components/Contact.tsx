@@ -75,7 +75,6 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -111,12 +110,10 @@ const Contact = () => {
       setResult("Something went wrong. Please try again.");
     }
 
-    // Simulate form submission (replace with actual API call)
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
 
-      // Reset form after successful submission
       setFormData({
         name: "",
         email: "",
@@ -125,10 +122,8 @@ const Contact = () => {
         budget: "",
       });
 
-      // Reset success message after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000);
     }, 2000);
-    
   };
 
   const contactInfo = [
@@ -153,16 +148,16 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 min-h-screen">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Get In{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Touch
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Ready to start your project? Let's discuss your ideas and turn them
             into reality.
           </p>
@@ -171,7 +166,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Info */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+            <h3 className="text-2xl font-bold text-white mb-8">
               Let's Connect
             </h3>
 
@@ -182,18 +177,16 @@ const Contact = () => {
                   <a
                     key={index}
                     href={info.link}
-                    className="flex items-start gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl hover:shadow-md transition-all duration-300 group"
+                    className="flex items-start gap-4 p-4 bg-gray-800 rounded-xl hover:shadow-md transition-all duration-300 group"
                   >
-                    <div className="p-3 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg group-hover:bg-blue-200 dark:group-hover:bg-blue-900/50 transition-colors duration-300">
+                    <div className="p-3 bg-blue-900/30 text-blue-400 rounded-lg group-hover:bg-blue-900/50 transition-colors duration-300">
                       <IconComponent size={24} />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
+                      <h4 className="font-semibold text-white mb-1">
                         {info.title}
                       </h4>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        {info.value}
-                      </p>
+                      <p className="text-gray-400">{info.value}</p>
                     </div>
                   </a>
                 );
@@ -211,14 +204,11 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8">
+            <div className="bg-gray-900 rounded-2xl shadow-lg p-8">
               {isSubmitted && (
-                <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-center gap-3">
-                  <CheckCircle
-                    className="text-green-600 dark:text-green-400"
-                    size={20}
-                  />
-                  <p className="text-green-700 dark:text-green-400 font-medium">
+                <div className="mb-6 p-4 bg-green-900/20 border border-green-800 rounded-lg flex items-center gap-3">
+                  <CheckCircle className="text-green-400" size={20} />
+                  <p className="text-green-400 font-medium">
                     Thank you! Your message has been sent successfully.
                   </p>
                 </div>
@@ -229,7 +219,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Full Name *
                     </label>
@@ -239,15 +229,13 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
-                        errors.name
-                          ? "border-red-500"
-                          : "border-gray-300 dark:border-gray-600"
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-800 border-gray-600 text-white ${
+                        errors.name ? "border-red-500" : "border-gray-600"
                       }`}
                       placeholder="Your full name"
                     />
                     {errors.name && (
-                      <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                      <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
                         <AlertCircle size={14} />
                         {errors.name}
                       </p>
@@ -257,7 +245,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Email Address *
                     </label>
@@ -267,15 +255,13 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
-                        errors.email
-                          ? "border-red-500"
-                          : "border-gray-300 dark:border-gray-600"
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-800 border-gray-600 text-white ${
+                        errors.email ? "border-red-500" : "border-gray-600"
                       }`}
                       placeholder="your.email@example.com"
                     />
                     {errors.email && (
-                      <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                      <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
                         <AlertCircle size={14} />
                         {errors.email}
                       </p>
@@ -287,7 +273,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Subject *
                     </label>
@@ -297,15 +283,13 @@ const Contact = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
-                        errors.subject
-                          ? "border-red-500"
-                          : "border-gray-300 dark:border-gray-600"
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-800 border-gray-600 text-white ${
+                        errors.subject ? "border-red-500" : "border-gray-600"
                       }`}
                       placeholder="Project discussion"
                     />
                     {errors.subject && (
-                      <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                      <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
                         <AlertCircle size={14} />
                         {errors.subject}
                       </p>
@@ -315,7 +299,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="budget"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                      className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Project Budget (Optional)
                     </label>
@@ -324,7 +308,7 @@ const Contact = () => {
                       name="budget"
                       value={formData.budget}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 dark:bg-gray-800 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 bg-gray-800 text-white"
                     >
                       <option value="">Select budget range</option>
                       {budgetOptions.map((option, index) => (
@@ -339,7 +323,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-gray-300 mb-2"
                   >
                     Message *
                   </label>
@@ -349,15 +333,13 @@ const Contact = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-none dark:bg-gray-800 dark:border-gray-600 dark:text-white ${
-                      errors.message
-                        ? "border-red-500"
-                        : "border-gray-300 dark:border-gray-600"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-none bg-gray-800 border-gray-600 text-white ${
+                      errors.message ? "border-red-500" : "border-gray-600"
                     }`}
                     placeholder="Tell me about your project, timeline, and any specific requirements..."
                   />
                   {errors.message && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400 flex items-center gap-1">
+                    <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
                       <AlertCircle size={14} />
                       {errors.message}
                     </p>

@@ -1,7 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Home, Briefcase, DollarSign, Mail } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
-import logoA from '../assets/asadlogo.png';
+import React, { useState, useEffect } from "react";
+import {
+  Menu,
+  X,
+  Sun,
+  Moon,
+  Home,
+  Briefcase,
+  DollarSign,
+  Mail,
+} from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import logoA from "../assets/asadlogo.png";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,27 +21,40 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { id: 'home', label: 'Home', icon: Home, path: '/' },
-    { id: 'projects', label: 'Projects', icon: Briefcase, path: '/projects' },
-    { id: 'services', label: 'Services', icon: DollarSign, path: '/services' },
-    { id: 'contact', label: 'Contact', icon: Mail, path: '/contact' },
+    { id: "home", label: "Home", icon: Home, path: "/" },
+    { id: "projects", label: "Projects", icon: Briefcase, path: "/projects" },
+    { id: "services", label: "Services", icon: DollarSign, path: "/services" },
+    { id: "contact", label: "Contact", icon: Mail, path: "/contact" },
   ];
 
+  function onTop() {
+    window.scrollTo(0, 0);
+  }
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg' 
-        : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-2">
+          {/* Logo with Home Link */}
           <div className="flex-shrink-0 sm:ml-6">
-            <img src={logoA} alt="" className='h-14 w-14 bg-white rounded-full p-[2px] mb-[2px]' />
+            <Link to="/" onClick={onTop}>
+              <img
+                src={logoA}
+                alt="Logo"
+                className="h-14 w-14 bg-white rounded-full p-[2px] mb-[2px] cursor-pointer"
+              />
+            </Link>
           </div>
 
           {/* Desktop Menu */}
@@ -46,10 +68,12 @@ const Navbar: React.FC = () => {
                   to={item.path}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-200 ${
                     isActive
-                      ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800'
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
+                      : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                   }`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false), onTop();
+                  }}
                 >
                   <IconComponent size={18} />
                   <span className="font-medium"> {item.label} </span>
@@ -93,8 +117,8 @@ const Navbar: React.FC = () => {
                   to={item.path}
                   className={`w-full flex items-center space-x-3 px-4 py-3 text-left transition-colors duration-200 ${
                     isActive
-                      ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
+                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >

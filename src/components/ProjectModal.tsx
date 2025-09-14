@@ -56,7 +56,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
           />
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 bg-white/90 dark:bg-gray-900/90 text-gray-700 dark:text-gray-300 rounded-full hover:bg-white dark:hover:bg-gray-900 transition-colors duration-200"
+            className="absolute top-4 z-10 right-4 p-2 bg-white/90 dark:bg-gray-900/90 text-gray-700 dark:text-gray-300 rounded-full hover:bg-white dark:hover:bg-gray-900 transition-colors duration-200"
           >
             <X size={24} />
           </button>
