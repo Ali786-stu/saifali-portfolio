@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Loader from "./Loader";
-
-// ✅ Type for GitHub Repo
 interface Repo {
   id: number;
   name: string;
@@ -23,11 +21,11 @@ const AllProjects: React.FC = () => {
   const [search, setSearch] = useState<string>("");
   const [language, setLanguage] = useState<string>("All");
 
-  // 🔥 Pagination
+  // Pagination---------------------------------------------------- -----
   const [currentPage, setCurrentPage] = useState<number>(1);
   const perPage = 6;
 
-  // Track screen size
+  // Track screen size----------------------------------------------------------
   const [isSmall, setIsSmall] = useState<boolean>(window.innerWidth < 640);
 
   useEffect(() => {
@@ -57,7 +55,7 @@ const AllProjects: React.FC = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  // 🔎 Search + Filter
+  // Search bar ------------------------------------------------------------------------
   useEffect(() => {
     let updated = [...repos];
 
@@ -75,18 +73,18 @@ const AllProjects: React.FC = () => {
     setCurrentPage(1);
   }, [search, language, repos]);
 
-  // ✅ Unique languages
+  // Unique languages
   const languages: string[] = [
     "All",
     ...Array.from(new Set(repos.map((r) => r.language).filter(Boolean))) as string[],
   ];
 
-  // ✅ Pagination calculations
+  // Pagination calculations
   const totalPages = Math.ceil(filteredRepos.length / perPage);
   const startIndex = (currentPage - 1) * perPage;
   const currentRepos = filteredRepos.slice(startIndex, startIndex + perPage);
 
-  // ✅ Helper: get visible page numbers
+  // Helper: get visible page numbers
   const getVisiblePages = () => {
     const maxVisible = isSmall ? 3 : 5;
     const pages: number[] = [];
@@ -106,7 +104,7 @@ const AllProjects: React.FC = () => {
     return pages;
   };
 
-  // ✅ Helper: choose live demo link
+  // Helper: choose live demo link
   const getLiveLink = (repo: Repo): string | null => {
     if (repo.homepage && repo.homepage.trim() !== "") {
       return repo.homepage; // Vercel/Netlify ya manually added
@@ -130,7 +128,7 @@ const AllProjects: React.FC = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="max-w-6xl mx-auto px-4 py-10 bg-[#111827]">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center my-10 text-[#3c59eb]">
         My GitHub Projects
       </h2>
@@ -168,7 +166,7 @@ const AllProjects: React.FC = () => {
             return (
               <div
                 key={repo.id}
-                className="border rounded-xl p-5 shadow-sm hover:shadow-xl transition bg-blue-50 flex flex-col justify-between"
+                className="border rounded-xl p-5 shadow-sm hover:shadow-xl transition bg-blue-100 flex flex-col justify-between"
               >
                 <div>
                   <h3 className="text-xl font-semibold mb-2">{repo.name}</h3>
