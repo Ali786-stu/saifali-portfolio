@@ -10,5 +10,5 @@ const Loader: React.FC = () => {
     </div>
   );
 };
-
+// 
 export default Loader;

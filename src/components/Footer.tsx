@@ -2,6 +2,7 @@ import { Heart, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home, Briefcase, DollarSign } from "lucide-react";
+import logoA from '../assets/asadlogo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,9 +45,9 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <h3
               data-cursorpointersm={true}
-              className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4"
+              className="flex items-center gap-1 text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4"
             >
-              Asad Alam
+              <img src={logoA} alt="logo" data-cursorpointersm={true} className="h-8 bg-white rounded-full" /> <span data-cursorpointersm={true}>Asad Alam</span>
             </h3>
             <p
               data-cursorpointertext={true}
