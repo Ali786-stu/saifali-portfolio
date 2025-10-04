@@ -91,7 +91,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden bg-[#5f265f]/40 text-white">
+      <section className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden bg-[#5f265f] text-white">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
@@ -127,7 +127,7 @@ const Hero = () => {
                   Hi, I'm{" "}
                   <span
                     data-cursorpointer={true}
-                    className="text-[40px] lg:text-7xl text-yellow-500 bg-clip-text text-transparent"
+                    className="text-[40px] lg:text-7xl text-yellow-500 bg-clip-text text-transparent md:top-10"
                     data-aos="zoom-in"
                     data-aos-delay="400"
                   >
