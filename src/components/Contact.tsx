@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CnVideo from "../assets/ContactVio.mp4";
 import {
   Mail,
   Phone,
@@ -88,7 +89,7 @@ const Contact = () => {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    formData.append("access_key", "fe3c558a-ed94-4849-802b-067bc4166fc7");
+    formData.append("access_key", "72c629d0-4620-439d-b763-9098c6c1d5b3");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -130,14 +131,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "ceo@asadalam.info",
-      link: "ceo@asadalam.info",
+      value: "saifali97100@gmail.com",
+      link: "saifali97100@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 7417331926",
-      link: "tel:+917417331925",
+      value: "+917786026807",
+      link: "tel:+917786026807",
     },
     {
       icon: MapPin,
@@ -148,16 +149,39 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 min-h-screen">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-gray-900 min-h-screen">
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={CnVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 data-cursorpointer={true} className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-cursorpointer={true}
+            className="text-4xl md:text-5xl font-bold text-orange-500 mb-6"
+          >
             Get In{" "}
-            <span data-cursorpointer={true} className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span
+              data-aos="zoom-in"
+              data-aos-delay="400"
+              data-cursorpointer={true}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            >
               Touch
             </span>
           </h2>
-          <p data-cursorpointerText={true} className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p
+            data-aos="fade-up"
+            data-aos-delay="600"
+            data-cursorpointerText={true}
+            className="text-xl text-yellow-400 font-bold max-w-3xl mx-auto"
+          >
             Ready to start your project? Let's discuss your ideas and turn them
             into reality.
           </p>
@@ -166,7 +190,12 @@ const Contact = () => {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Info */}
           <div className="lg:col-span-1">
-            <h3 data-cursorpointersm={true} className="text-2xl font-bold text-white mb-8">
+            <h3
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-cursorpointersm={true}
+              className="text-2xl font-bold text-yellow-500 mb-8"
+            >
               Let's Connect
             </h3>
 
@@ -176,26 +205,49 @@ const Contact = () => {
                 return (
                   <a
                     key={index}
-                    href={info.link} data-cursorpointerMini={true}
-                    className="flex items-start gap-4 p-4 bg-gray-800 rounded-xl hover:shadow-md transition-all duration-300 group"
+                    href={info.link}
+                    data-aos="fade-right"
+                    data-aos-delay={300 + index * 200} // har card thoda delay ke sath
+                    data-cursorpointerMini={true}
+                    className="flex items-start gap-4 p-4 hover:bg-yellow-500 border border-yellow-300 hover:border-pink-700 rounded-xl hover:shadow-md transition-all duration-300 group"
                   >
                     <div className="p-3 bg-blue-900/30 text-blue-400 rounded-lg group-hover:bg-blue-900/50 transition-colors duration-300">
                       <IconComponent size={24} data-cursorpointerMini={true} />
                     </div>
                     <div>
-                      <h4 data-cursorpointerMini={true} className="font-semibold text-white mb-1">
+                      <h4
+                        data-cursorpointerMini={true}
+                        className="font-semibold text-white mb-1"
+                      >
                         {info.title}
                       </h4>
-                      <p data-cursorpointerMini={true} className="text-gray-400">{info.value}</p>
+                      <p
+                        data-cursorpointerMini={true}
+                        className="text-gray-400"
+                      >
+                        {info.value}
+                      </p>
                     </div>
                   </a>
                 );
               })}
             </div>
 
-            <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-6 rounded-2xl text-white">
-              <h4 data-cursorpointerText={true} className="text-lg font-semibold mb-2">Quick Response</h4>
-              <p data-cursorpointerText={true} className="text-blue-100 text-sm">
+            <div
+              data-aos="zoom-in-up"
+              data-aos-delay="800"
+              className="bg-gradient-to-br from-blue-500 to-purple-600 p-6 rounded-2xl text-white"
+            >
+              <h4
+                data-cursorpointerText={true}
+                className="text-lg font-semibold mb-2"
+              >
+                Quick Response
+              </h4>
+              <p
+                data-cursorpointerText={true}
+                className="text-blue-100 text-sm"
+              >
                 I typically respond to messages within 24 hours. For urgent
                 projects, don't hesitate to call directly.
               </p>
@@ -203,10 +255,18 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <div className="bg-gray-900 rounded-2xl shadow-lg p-8">
+          <div
+            className="lg:col-span-2"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <div className="bg-gray-900/40 rounded-2xl shadow-lg p-8">
               {isSubmitted && (
-                <div className="mb-6 p-4 bg-green-900/20 border border-green-800 rounded-lg flex items-center gap-3">
+                <div
+                  className="mb-6 p-4 bg-green-900/20 border border-green-800 rounded-lg flex items-center gap-3"
+                  data-aos="fade-down"
+                  data-aos-delay="600"
+                >
                   <CheckCircle className="text-green-400" size={20} />
                   <p className="text-green-400 font-medium">
                     Thank you! Your message has been sent successfully.
@@ -216,7 +276,7 @@ const Contact = () => {
 
               <form onSubmit={onSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div>
+                  <div data-aos="fade-up" data-aos-delay="300">
                     <label
                       htmlFor="name"
                       data-cursorpointerMini={true}
@@ -243,7 +303,7 @@ const Contact = () => {
                     )}
                   </div>
 
-                  <div>
+                  <div data-aos="fade-up" data-aos-delay="400">
                     <label
                       htmlFor="email"
                       data-cursorpointerMini={true}
@@ -272,7 +332,7 @@ const Contact = () => {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div>
+                  <div data-aos="fade-up" data-aos-delay="500">
                     <label
                       htmlFor="subject"
                       data-cursorpointerMini={true}
@@ -299,7 +359,7 @@ const Contact = () => {
                     )}
                   </div>
 
-                  <div>
+                  <div data-aos="fade-up" data-aos-delay="600">
                     <label
                       htmlFor="budget"
                       data-cursorpointerMini={true}
@@ -324,7 +384,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div>
+                <div data-aos="fade-up" data-aos-delay="700">
                   <label
                     htmlFor="message"
                     data-cursorpointerMini={true}
@@ -354,6 +414,8 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
+                  data-aos="zoom-in"
+                  data-aos-delay="800"
                   className={`w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 ${
                     isSubmitting
                       ? "opacity-75 cursor-not-allowed"

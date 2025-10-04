@@ -2,7 +2,7 @@ import { Heart, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home, Briefcase, DollarSign } from "lucide-react";
-import logoA from '../assets/asadlogo.png';
+import logoA from "../assets/saiflogo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,14 +10,18 @@ const Footer = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/aligasad", label: "GitHub" },
+    {
+      icon: Github,
+      href: "https://github.com/Ali786-stu?tab=repositories",
+      label: "GitHub",
+    },
     {
       icon: Linkedin,
-      href: "https://www.linkedin.com/in/asadalamalig/",
+      href: "https://www.linkedin.com/in/saif-ali-1b55a3237",
       label: "LinkedIn",
     },
     { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Mail, href: "mailto:ceo@asadalam.info", label: "Email" },
+    { icon: Mail, href: "mailto:saifali97100@gmail.com", label: "Email" },
   ];
 
   const navItems = [
@@ -28,9 +32,9 @@ const Footer = () => {
   ];
 
   const getInTouch = [
-    { title: "ceo@asadalam.info", link: "mailto:ceo@asadalam.info" },
-    { title: "+91 7417331926", link: "tel:917417331926" },
-    { title: "Lucknow, IN", link: "https://maps.app.goo.gl/z5yeXXg8fTVMm2pL8" },
+    { title: "saifali97100@gmail.com", link: "mailto:saifali97100@gmail.com" },
+    { title: "+91 7786026807", link: "tel:917786026807" },
+    { title: "Lucknow, IN", link: "https://maps.app.goo.gl/3vp5nFbiMn9zzj2m7" },
   ];
 
   function onTop() {
@@ -42,23 +46,33 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 md:col-span-2" data-aos="fade-right">
             <h3
               data-cursorpointersm={true}
               className="flex items-center gap-1 text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4"
             >
-              <img src={logoA} alt="logo" data-cursorpointersm={true} className="h-8 bg-white rounded-full" /> <span data-cursorpointersm={true}>Asad Alam</span>
+              <img
+                src={logoA}
+                alt="logo"
+                data-cursorpointersm={true}
+                className="h-8 bg-white rounded-full"
+              />{" "}
+              <span data-cursorpointersm={true}>SAIF ALI</span>
             </h3>
             <p
               data-cursorpointertext={true}
-              className="text-gray-400 mb-6 max-w-md"
+              className="text-yellow-400 mb-6 max-w-md font-bold"
             >
               Full-Stack Developer & UI/UX Designer passionate about creating
               beautiful and functional digital experiences. Let's build
               something amazing together.
             </p>
 
-            <div className="flex space-x-4">
+            <div
+              className="flex space-x-4"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
               {socialLinks.map((social, index) => {
                 const IconComponent = social.icon;
                 return (
@@ -67,7 +81,7 @@ const Footer = () => {
                     href={social.href}
                     aria-label={social.label}
                     data-cursorpointerMini={true}
-                    className="p-2 bg-gray-900 text-white hover:bg-gray-800 rounded-lg transition-colors duration-300 hover:text-blue-400"
+                    className="p-2 bg-gray-900 text-white hover:bg-yellow-500 rounded-lg transition-colors duration-300 hover:text-pink-700"
                   >
                     <IconComponent data-cursorpointermini={true} size={20} />
                   </a>
@@ -78,8 +92,15 @@ const Footer = () => {
 
           <div className="flex md:w-[50vw] ">
             {/* Quick Links */}
-            <div className="w-[50%] sm:w-full">
-              <h4 data-cursorpointersm={true} className="text-lg font-semibold mb-4 text-white">
+            <div
+              className="w-[50%] sm:w-full"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <h4
+                data-cursorpointersm={true}
+                className="text-lg font-semibold mb-4 text-white"
+              >
                 Quick Links
               </h4>
               <div className="flex flex-col">
@@ -114,15 +135,21 @@ const Footer = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="w-[50%] sm:w-full">
-              <h4 data-cursorpointersm={true} className="text-lg font-semibold mb-4 text-white">
-                Get In Touch 
+            <div
+              className="w-[50%] sm:w-full"
+              data-aos="fade-left"
+              data-aos-delay="400"
+            >
+              <h4
+                data-cursorpointersm={true}
+                className="text-lg font-semibold mb-4 text-white"
+              >
+                Get In Touch
               </h4>
               <div className="space-y-2 text-gray-400 group">
                 {getInTouch.map((item, idx) => (
                   <li
                     key={idx}
-                    
                     className="list-none group-hover:opacity-50 hover:!opacity-100 transition"
                   >
                     <a
@@ -144,7 +171,7 @@ const Footer = () => {
             className="text-gray-400 text-sm flex items-center gap-2"
             data-cursorpointer={true}
           >
-            © {currentYear} Asad Alam. Made with{" "}
+            © {currentYear} Saif Ali. Made with{" "}
             <Heart size={16} className="text-red-500" /> and React
           </p>
 

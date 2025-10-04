@@ -10,7 +10,7 @@ import {
   Mail,
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logoA from "../assets/asadlogo.png";
+import logoA from "../assets/saiflogo.png";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

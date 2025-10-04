@@ -1,20 +1,19 @@
-import { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
-import Hero from './components/Hero';
-import Projects from './components/Projects';
-import Services from './components/Services';
-import Contact from './components/Contact';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Misc from './components/Misc';
-import Loader from './components/Loader';
+import Hero from "./components/Hero";
+import Projects from "./components/Projects";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Misc from "./components/Misc";
+import Loader from "./components/Loader";
 
 import "./components/styles/misc.scss";
-import AllProjects from './components/AllProjects';
+import AllProjects from "./components/AllProjects";
 
 function App() {
-
   const [loading, setLoading] = useState(true);
 
   const dotCursor = (e: MouseEvent) => {
@@ -30,14 +29,14 @@ function App() {
     } else if (element.getAttribute("data-cursorpointermini")) {
       cursor.classList.add("cursorHoverMini");
     } else if (element.getAttribute("data-cursorpointertext")) {
-      cursor.classList.add('cursorHoverText');
+      cursor.classList.add("cursorHoverText");
     } else if (element.getAttribute("data-cursorpointersm")) {
-      cursor.classList.add('cursorHoverSm')
+      cursor.classList.add("cursorHoverSm");
     } else {
       cursor.classList.remove("cursorHover");
       cursor.classList.remove("cursorHoverMini");
-      cursor.classList.remove('cursorHoverText');
-      cursor.classList.remove('cursorHoverSm');
+      cursor.classList.remove("cursorHoverText");
+      cursor.classList.remove("cursorHoverSm");
     }
   };
 
@@ -53,7 +52,7 @@ function App() {
     };
   }, []);
 
-  // 🔥 Agar loading true hai to Loader dikhao
+  // Agar loading true hai to Loader dikhao
   if (loading) {
     return <Loader />;
   }

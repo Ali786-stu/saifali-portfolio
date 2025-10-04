@@ -35,7 +35,7 @@ const AllProjects: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const username = "aligasad";
+    const username = "Ali786-stu";
     const url = `https://api.github.com/users/${username}/repos?per_page=100&type=all`;
 
     fetch(url)
@@ -76,7 +76,9 @@ const AllProjects: React.FC = () => {
   // Unique languages
   const languages: string[] = [
     "All",
-    ...Array.from(new Set(repos.map((r) => r.language).filter(Boolean))) as string[],
+    ...(Array.from(
+      new Set(repos.map((r) => r.language).filter(Boolean))
+    ) as string[]),
   ];
 
   // Pagination calculations
@@ -114,9 +116,7 @@ const AllProjects: React.FC = () => {
   };
 
   if (loading) {
-    return (
-      <Loader />
-    );
+    return <Loader />;
   }
 
   if (error) {
@@ -128,13 +128,24 @@ const AllProjects: React.FC = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10 bg-[#111827]">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center my-10 text-[#3c59eb]">
+    <div
+      className="max-w-6xl mx-auto px-4 py-10 bg-[#111827]"
+      data-aos="fade-up"
+    >
+      <h2
+        className="text-2xl sm:text-3xl md:text-4xl font-bold text-center my-10 text-[#3c59eb]"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      >
         My GitHub Projects
       </h2>
 
       {/* 🔍 Search + Filter */}
-      <div className="flex flex-col sm:flex-row gap-4 justify-between mb-6">
+      <div
+        className="flex flex-col sm:flex-row gap-4 justify-between mb-6"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
         <input
           type="text"
           placeholder="Search projects..."
@@ -158,15 +169,23 @@ const AllProjects: React.FC = () => {
 
       {/* Projects Grid */}
       {currentRepos.length === 0 ? (
-        <p className="text-center text-gray-600">No projects found.</p>
+        <p
+          className="text-center text-gray-600"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          No projects found.
+        </p>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {currentRepos.map((repo) => {
+          {currentRepos.map((repo, index) => {
             const liveLink = getLiveLink(repo);
             return (
               <div
                 key={repo.id}
                 className="border rounded-xl p-5 shadow-sm hover:shadow-xl transition bg-blue-100 flex flex-col justify-between"
+                data-aos="fade-up"
+                data-aos-delay={`${index * 150}`}
               >
                 <div>
                   <h3 className="text-xl font-semibold mb-2">{repo.name}</h3>
@@ -220,7 +239,11 @@ const AllProjects: React.FC = () => {
 
       {/* ✅ Pagination Controls */}
       {totalPages > 1 && (
-        <div className="flex justify-center items-center gap-2 mt-8 flex-wrap">
+        <div
+          className="flex justify-center items-center gap-2 mt-8 flex-wrap"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           <button
             disabled={currentPage === 1}
             onClick={() => setCurrentPage((prev) => prev - 1)}

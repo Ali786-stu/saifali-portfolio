@@ -11,14 +11,19 @@ import {
   Award,
   Users,
   Coffee,
+  Cpu,
+  // icons,
 } from "lucide-react";
-import myCV from "../assets/myCV2.pdf";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import myCV from "../assets/saif_Resume.pdf";
 import { AnimatePresence, motion } from "framer-motion";
-import myPic from "../assets/asadslfijj.jpg";
-import { link } from "framer-motion/client";
+import myPic from "../assets/heroMainlogo.png";
 import { useNavigate } from "react-router-dom";
 import AcademicTimeline from "../AcademicTimeline";
+import { Icon } from "@iconify/react";
+import gif1 from "../assets/gif1.gif";
+import gif2 from "../assets/gif2.gif";
+import gif3 from "../assets/gif3.webp";
+import gif4 from "../assets/gif4.gif";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -70,14 +75,14 @@ const Hero = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = myCV;
-    link.download = "Asad_Alam_CV.pdf";
+    link.download = "saif_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   const handleMail = () => {
-    window.location.href = "mailto:your@email.com";
+    window.location.href = "mailto:saifali123@gmail.com";
   };
 
   const handleScrollDown = () => {
@@ -86,7 +91,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden bg-[#111827] text-white">
+      <section className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden bg-[#5f265f]/40 text-white">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
@@ -105,32 +110,42 @@ const Hero = () => {
             {/* Left Content */}
             <div className="text-center lg:text-left">
               <div className="mb-8">
-                <div className="inline-block px-4 py-2 bg-blue-900/30 text-blue-400 rounded-full text-sm font-medium mb-6">
+                <div
+                  className="inline-block px-4 py-2 bg-blue-900/30 text-blue-400 rounded-full text-sm font-medium mb-6"
+                  data-aos="fade-down"
+                  data-aos-duration="1000"
+                >
                   👋 Welcome to my portfolio
                 </div>
 
                 <h1
                   data-cursorpointer={true}
                   className="text-2xl md:text-6xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+                  data-aos="fade-right"
+                  data-aos-duration="1200"
                 >
                   Hi, I'm{" "}
                   <span
                     data-cursorpointer={true}
-                    className="text-[40px] lg:text-7xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent"
+                    className="text-[40px] lg:text-7xl text-yellow-500 bg-clip-text text-transparent"
+                    data-aos="zoom-in"
+                    data-aos-delay="400"
                   >
-                    Asad Alig
+                    SAIF ALI
                   </span>
                 </h1>
 
                 <div
                   data-cursorpointersm={true}
-                  className="text-xl md:text-2xl text-gray-300 mb-4 h-8"
+                  className="text-xl md:text-2xl text-gray-300 mb-4 h-8 font-bold"
+                  data-aos="fade-left"
+                  data-aos-delay="600"
                 >
                   {text}
                   <span className="animate-blink">|</span>
                 </div>
 
-                <div className="h-6 mb-8 flex justify-start">
+                <div className="h-6 mb-8 flex justify-center md:md:justify-start">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={skills[currentSkill]}
@@ -141,7 +156,7 @@ const Hero = () => {
                         duration: 0.6,
                         ease: [0.6, -0.05, 0.01, 0.99],
                       }}
-                      className="text-lg text-rose-400 font-medium"
+                      className="text-sm sm:text-center md:text-lg text-yellow-500 font-bold"
                     >
                       {skills[currentSkill]}
                     </motion.div>
@@ -151,6 +166,8 @@ const Hero = () => {
                 <p
                   data-cursorpointerText={true}
                   className="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8"
+                  data-aos="fade-up"
+                  data-aos-delay="800"
                 >
                   I'm a passionate developer who loves creating beautiful,
                   functional, and user-friendly digital experiences. With
@@ -158,20 +175,27 @@ const Hero = () => {
                   individuals bring their digital visions to life.
                 </p>
 
-                <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
+                <div
+                  className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8"
+                  data-aos="fade-up"
+                  data-aos-delay="1000"
+                >
                   {[
-                    { tech: "React js", icons: "logos:react" },
-                    { tech: "JavaScript", icons: "logos:javascript" },
-                    { tech: "TypeScript", icons: "logos:typescript-icon" },
-                    { tech: "Node.js", icons: "logos:nodejs-icon" },
-                    { tech: "Firebase", icons: "devicon:firebase" },
-                    { tech: "SQL", icons: "logos:mysql-icon" },
-                    { tech: "Java", icons: "logos:java" },
-                    { tech: "C Lang.", icons: "logos:c" },
+                    // { tech: "TypeScript", icons: "logos:typescript-icon" },
+                    // { tech: "Node.js", icons: "logos:nodejs-icon" },
+                    // { tech: "Firebase", icons: "devicon:firebase" },
+                    // { tech: "C Lang.", icons: "logos:c" },
+                    // { tech: "Java", icons: "logos:java" },
+                    // { tech: "CSS", icons: "logos:css-3" },
                     { tech: "HTML", icons: "logos:html-5" },
+                    { tech: "Vanilla CSS", icons: "logos:css-3" },
+                    { tech: "JavaScript", icons: "logos:javascript" },
+                    { tech: "React js", icons: "logos:react" },
                     { tech: "Tailwind CSS", icons: "logos:tailwindcss-icon" },
                     { tech: "BootStrap", icons: "logos:bootstrap" },
-                    { tech: "Vanilla CSS", icons: "logos:css-3" },
+                    { tech: "php", icons: "logos:php" },
+                    { tech: "SQL", icons: "logos:mysql-icon" },
+                    { tech: "Shopify.Liquid", icons: "logos:shopify" },
                     { tech: "Git & GitHub", icons: "logos:git-icon" },
                     { tech: "Vs Code", icons: "logos:visual-studio-code" },
                   ].map((obj, index) => (
@@ -179,6 +203,8 @@ const Hero = () => {
                       key={index}
                       data-cursorpointerMini={true}
                       className="px-3 py-1 flex items-center gap-1 bg-gray-800 text-gray-300 rounded-full text-sm font-medium"
+                      data-aos="zoom-in"
+                      data-aos-delay={index * 100}
                     >
                       <Icon
                         icon={obj.icons}
@@ -191,7 +217,11 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
+              <div
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12"
+                data-aos="fade-up"
+                data-aos-delay="1200"
+              >
                 <button
                   onClick={handleMail}
                   data-cursorpointer={true}
@@ -204,28 +234,32 @@ const Hero = () => {
                 <button
                   onClick={handleDownload}
                   data-cursorpointer={true}
-                  className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-semibold rounded-full hover:bg-gray-800 hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                  className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-semibold rounded-full hover:bg-yellow-600 hover:scale-105 transition-all duration-300 flex items-center gap-2"
                 >
                   <Download size={20} />
                   Download CV
                 </button>
               </div>
 
-              <div className="flex justify-center lg:justify-start space-x-6">
+              <div
+                className="flex justify-center lg:justify-start space-x-6"
+                data-aos="zoom-in-up"
+                data-aos-delay="1400"
+              >
                 {[
                   {
                     icon: Github,
-                    href: "https://github.com/aligasad",
+                    href: "https://github.com/Ali786-stu?tab=repositories",
                     label: "GitHub",
                   },
                   {
                     icon: Linkedin,
-                    href: "https://www.linkedin.com/in/asadalamalig/",
+                    href: "https://www.linkedin.com/in/saif-ali-1b55a3237",
                     label: "LinkedIn",
                   },
                   {
                     icon: Mail,
-                    href: "mailto:asadalam4291@gmail.com",
+                    href: "mailto:saifali97100@gmail.com",
                     label: "Email",
                   },
                 ].map((social, index) => {
@@ -236,7 +270,7 @@ const Hero = () => {
                       href={social.href}
                       aria-label={social.label}
                       data-cursorpointerMini={true}
-                      className="p-3 bg-gray-800 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300 text-gray-300 hover:text-blue-400"
+                      className="p-3 hover:bg-yellow-500 bg-blue-950 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300 text-gray-300 hover:text-white"
                     >
                       <IconComponent data-cursorpointerMini={true} size={24} />
                     </a>
@@ -244,32 +278,98 @@ const Hero = () => {
                 })}
               </div>
             </div>
-
             {/* Right Content - Profile Photo */}
-            <div className="flex justify-center lg:justify-end lg:mr-11 max-md:-order-1">
+            <div
+              className="flex justify-center lg:justify-end lg:mr-11 max-md:-order-1"
+              data-aos="fade-left"
+              data-aos-duration="1200"
+            >
               <div className="relative lg:mb-32">
-                <div className="relative w-80 h-80 md:w-96 md:h-96">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
-                  <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-400/20 rounded-full animate-bounce delay-1000"></div>
-                  <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-purple-400/20 rounded-full animate-bounce delay-500"></div>
+                <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-96 md:h-96">
+                  <div className="absolute inset-0 bg-gradient-to-r from-white to-black rounded-full blur-2xl opacity-20 animate-pulse"></div>
 
-                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl">
+                  {/* 🔵 Top Right */}
+                  <div
+                    className="absolute -top-3 -right-10 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
+                    data-aos="zoom-in"
+                    data-aos-delay="200"
+                  >
+                    <img
+                      src={gif1}
+                      alt="Animated GIF Decor"
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
+
+                  {/* 🔵 Top Left */}
+                  <div className="absolute -top-3 -left-10 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32">
+                    <img
+                      src={gif2}
+                      alt="Animated GIF Decor"
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
+
+                  {/* 🔵 Bottom Right */}
+                  <div className="absolute -bottom-4 -right-10 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32">
+                    <img
+                      src={gif3}
+                      alt="Animated GIF Decor"
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
+
+                  {/* 🔵 Bottom Left */}
+                  <div className="absolute -bottom-4 -left-10 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32">
+                    <img
+                      src={gif4}
+                      alt="Animated GIF Decor"
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
+
+                  {/* Profile Image */}
+                  <div
+                    className="relative w-full h-full rounded-full overflow-hidden border-2 sm:border-4 border-green-400 shadow-2xl"
+                    data-aos="flip-right"
+                    data-aos-duration="1500"
+                  >
                     <img
                       src={myPic}
-                      alt="Asad Alam - Profile"
+                      alt="Saif Ali - Profile"
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
                   </div>
 
-                  <div className="absolute top-8 -left-8 p-3 bg-gray-800 rounded-full shadow-lg animate-float">
-                    <Code className="w-6 h-6 text-blue-600" />
+                  {/* Floating Icons */}
+                  <div
+                    className="absolute -top-6 left-1/3 transform -translate-x-1/3 p-2 sm:p-3 bg-rose-400 rounded-full shadow-lg animate-float"
+                    data-aos="fade-down"
+                    data-aos-delay="1000"
+                  >
+                    <Code className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <div className="absolute top-1/2 -right-8 p-3 bg-gray-800 rounded-full shadow-lg animate-float delay-1000">
-                    <Palette className="w-6 h-6 text-purple-600" />
+                  <div
+                    className="absolute top-1/2 -right-8 p-2 sm:p-3 bg-rose-500 rounded-full shadow-lg animate-float delay-1000"
+                    data-aos="fade-left"
+                    data-aos-delay="1200"
+                  >
+                    <Palette className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <div className="absolute bottom-8 -left-4 p-3 bg-gray-800 rounded-full shadow-lg animate-float delay-500">
-                    <Smartphone className="w-6 h-6 text-indigo-600" />
+                  <div
+                    className="absolute top-1/2 -left-8 p-2 sm:p-3 bg-rose-600 rounded-full shadow-lg animate-float delay-500"
+                    data-aos="fade-right"
+                    data-aos-delay="1400"
+                  >
+                    <Smartphone className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                  <div
+                    className="absolute -bottom-8 right-1/2 translate-x-1/2 p-2 sm:p-3 bg-rose-700 rounded-full shadow-lg animate-float delay-500"
+                    data-aos="fade-up"
+                    data-aos-delay="1600"
+                  >
+                    <Cpu className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                   </div>
                 </div>
               </div>
@@ -282,6 +382,8 @@ const Hero = () => {
           className={`max-w-7xl mx-auto pb-20 pt-5 transform transition-all duration-1000 delay-500 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
+          data-aos="fade-up"
+          data-aos-duration="1200"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => {
@@ -295,6 +397,8 @@ const Hero = () => {
                   whileHover={{ y: -5 }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                   viewport={{ once: true }}
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 200}
                 >
                   <div
                     onClick={() => {
@@ -302,20 +406,20 @@ const Hero = () => {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                     data-cursorpointer={true}
-                    className="cursor-pointer group text-center p-6 bg-gray-800/50 hover:bg-gray-700/50 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:scale-105 transition-all duration-300"
+                    className="cursor-pointer group text-center p-6 bg-gray-800/50 hover:bg-orange-500 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:scale-105 transition-all duration-300"
                   >
                     <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:from-black group-hover:to-rose-600 text-white rounded-full mb-4">
                       <IconComponent size={24} data-cursorpointerText={true} />
                     </div>
                     <div
                       data-cursorpointerText={true}
-                      className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-gray-400"
+                      className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-pink-800"
                     >
                       {stat.number}
                     </div>
                     <div
                       data-cursorpointerText={true}
-                      className="text-sm line-clamp-1 text-gray-300 group-hover:text-rose-400 font-medium"
+                      className="text-sm line-clamp-1 text-gray-300 group-hover:text-white font-bold"
                     >
                       {stat.label}
                     </div>
@@ -328,7 +432,9 @@ const Hero = () => {
 
         <button
           onClick={handleScrollDown}
-          className="absolute bottom-3 left-1/2 transform -translate-x-1/2 p-2 text-gray-400 hover:text-gray-200 transition-colors animate-bounce"
+          className="absolute z-10 bottom-3 left-1/2 transform -translate-x-1/2 p-2 text-gray-400 hover:text-gray-200 transition-colors animate-bounce"
+          data-aos="fade-up"
+          data-aos-delay="1000"
         >
           <ChevronDown size={32} />
         </button>
