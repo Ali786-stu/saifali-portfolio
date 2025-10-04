@@ -237,7 +237,7 @@ const Hero = () => {
                   className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-semibold rounded-full hover:bg-yellow-600 hover:scale-105 transition-all duration-300 flex items-center gap-2"
                 >
                   <Download size={20} />
-                  CV
+                  Download CV
                 </button>
               </div>
 
