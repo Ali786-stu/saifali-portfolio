@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
@@ -42,35 +43,47 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("mousemove", dotCursor);
-
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
     return () => {
       window.removeEventListener("mousemove", dotCursor);
     };
   }, []);
 
-  // Agar loading true hai to Loader dikhao
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-      <Navbar />
-      <main className="transition-all duration-500 ease-in-out">
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/allProjects" element={<AllProjects />} />
-        </Routes>
-      </main>
-      <Footer />
-      <Misc />
+      <AnimatePresence mode="wait">
+        {loading ? (
+          <motion.div
+            key="loader"
+            exit={{ 
+              y: "-100%",
+              transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
+            }}
+            className="fixed inset-0 z-[9999]"
+          >
+            <Loader onFinished={() => setLoading(false)} />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <Navbar />
+            <main className="transition-all duration-500 ease-in-out">
+              <Routes>
+                <Route path="/" element={<Hero />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/allProjects" element={<AllProjects />} />
+              </Routes>
+            </main>
+            <Footer />
+            <Misc />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

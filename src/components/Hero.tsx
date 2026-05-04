@@ -12,7 +12,6 @@ import {
   Users,
   Coffee,
   Cpu,
-  // icons,
 } from "lucide-react";
 import myCV from "../assets/saif_Resume.pdf";
 import { AnimatePresence, motion } from "framer-motion";
@@ -20,10 +19,11 @@ import myPic from "../assets/heroMainlogo.png";
 import { useNavigate } from "react-router-dom";
 import AcademicTimeline from "../AcademicTimeline";
 import { Icon } from "@iconify/react";
-import gif1 from "../assets/gif1.gif";
-import gif2 from "../assets/gif2.gif";
-import gif3 from "../assets/gif3.webp";
-import gif4 from "../assets/gif4.gif";
+
+// Dynamically import all icons from ring-icon folder
+const iconImages = Object.values(
+  import.meta.glob("../ring-icon/*.png", { eager: true, import: "default" })
+) as string[];
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -31,6 +31,10 @@ const Hero = () => {
   const [text, setText] = useState("");
   const fullText = "Full-Stack Developer & UI/UX Designer";
   const [currentSkill, setCurrentSkill] = useState(0);
+
+  // Split icons for inner and outer rings
+  const innerIcons = iconImages.slice(0, 6);
+  const outerIcons = iconImages.slice(6, 12);
 
   const skills = [
     "React js Development",
@@ -91,13 +95,12 @@ const Hero = () => {
 
   return (
     <>
-      <section className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden bg-[#5f265f] text-white">
+      <section className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden bg-[#5f265f]/40 text-white">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
-
         {/* Main Hero Section */}
         <div className="max-w-7xl mx-auto">
           <div
@@ -127,7 +130,7 @@ const Hero = () => {
                   Hi, I'm{" "}
                   <span
                     data-cursorpointer={true}
-                    className="text-[40px] lg:text-7xl text-yellow-500 bg-clip-text text-transparent md:top-10"
+                    className="text-[40px] lg:text-7xl text-yellow-500 bg-clip-text text-transparent"
                     data-aos="zoom-in"
                     data-aos-delay="400"
                   >
@@ -181,12 +184,6 @@ const Hero = () => {
                   data-aos-delay="1000"
                 >
                   {[
-                    // { tech: "TypeScript", icons: "logos:typescript-icon" },
-                    // { tech: "Node.js", icons: "logos:nodejs-icon" },
-                    // { tech: "Firebase", icons: "devicon:firebase" },
-                    // { tech: "C Lang.", icons: "logos:c" },
-                    // { tech: "Java", icons: "logos:java" },
-                    // { tech: "CSS", icons: "logos:css-3" },
                     { tech: "HTML", icons: "logos:html-5" },
                     { tech: "Vanilla CSS", icons: "logos:css-3" },
                     { tech: "JavaScript", icons: "logos:javascript" },
@@ -194,6 +191,7 @@ const Hero = () => {
                     { tech: "Tailwind CSS", icons: "logos:tailwindcss-icon" },
                     { tech: "BootStrap", icons: "logos:bootstrap" },
                     { tech: "php", icons: "logos:php" },
+                    { tech: "Laravel", icons: "logos:laravel" },
                     { tech: "SQL", icons: "logos:mysql-icon" },
                     { tech: "Shopify.Liquid", icons: "logos:shopify" },
                     { tech: "Git & GitHub", icons: "logos:git-icon" },
@@ -278,59 +276,62 @@ const Hero = () => {
                 })}
               </div>
             </div>
-            {/* Right Content - Profile Photo */}
+            
+            {/* Right Content - Orbital Tech Profile */}
             <div
-              className="flex justify-center lg:justify-end lg:mr-11 max-md:-order-1"
+              className="flex justify-center lg:justify-end lg:mr-11 max-md:-order-1 mb-12 lg:mb-0"
               data-aos="fade-left"
               data-aos-duration="1200"
             >
-              <div className="relative lg:mb-32">
-                <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-96 md:h-96">
-                  <div className="absolute inset-0 bg-gradient-to-r from-white to-black rounded-full blur-2xl opacity-20 animate-pulse"></div>
+              <div className="relative flex items-center justify-center scale-90 sm:scale-100">
+                {/* Outer Tech Ring (Counter-Clockwise) */}
+                <motion.div 
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                  className="absolute w-64 h-64 sm:w-80 sm:h-80 md:w-[420px] md:h-[420px] lg:w-[480px] lg:h-[480px] rounded-full border border-dashed border-blue-500/20"
+                >
+                  {outerIcons.map((img, i) => (
+                    <div 
+                      key={i}
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full"
+                      style={{ transform: `translate(-50%, -50%) rotate(${(i * 360) / outerIcons.length}deg)` }}
+                    >
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <div className="p-1">
+                          <img src={img} alt="tech" className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:w-24 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
 
-                  {/* 🔵 Top Right */}
+                {/* Inner Tech Ring (Clockwise) */}
+                <motion.div 
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                  className="absolute w-48 h-48 sm:w-64 sm:h-64 md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] rounded-full border border-dashed border-orange-500/30"
+                >
+                  {innerIcons.map((img, i) => (
+                    <div 
+                      key={i}
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full"
+                      style={{ transform: `translate(-50%, -50%) rotate(${(i * 360) / innerIcons.length + 45}deg)` }}
+                    >
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <div className="p-1">
+                          <img src={img} alt="tech" className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:w-20 object-contain drop-shadow-[0_0_15px_rgba(249,115,22,0.3)]" />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+
+                {/* Profile Image Container */}
+                <div className="relative w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+
                   <div
-                    className="absolute -top-3 -right-10 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
-                    data-aos="zoom-in"
-                    data-aos-delay="200"
-                  >
-                    <img
-                      src={gif1}
-                      alt="Animated GIF Decor"
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-
-                  {/* 🔵 Top Left */}
-                  <div className="absolute -top-3 -left-10 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32">
-                    <img
-                      src={gif2}
-                      alt="Animated GIF Decor"
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-
-                  {/* 🔵 Bottom Right */}
-                  <div className="absolute -bottom-4 -right-10 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32">
-                    <img
-                      src={gif3}
-                      alt="Animated GIF Decor"
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-
-                  {/* 🔵 Bottom Left */}
-                  <div className="absolute -bottom-4 -left-10 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32">
-                    <img
-                      src={gif4}
-                      alt="Animated GIF Decor"
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-
-                  {/* Profile Image */}
-                  <div
-                    className="relative w-full h-full rounded-full overflow-hidden border-2 sm:border-4 border-green-400 shadow-2xl"
+                    className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/10 shadow-2xl z-10"
                     data-aos="flip-right"
                     data-aos-duration="1500"
                   >
@@ -339,37 +340,7 @@ const Hero = () => {
                       alt="Saif Ali - Profile"
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
-                  </div>
-
-                  {/* Floating Icons */}
-                  <div
-                    className="absolute -top-6 left-1/3 transform -translate-x-1/3 p-2 sm:p-3 bg-rose-400 rounded-full shadow-lg animate-float"
-                    data-aos="fade-down"
-                    data-aos-delay="1000"
-                  >
-                    <Code className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
-                  </div>
-                  <div
-                    className="absolute top-1/2 -right-8 p-2 sm:p-3 bg-rose-500 rounded-full shadow-lg animate-float delay-1000"
-                    data-aos="fade-left"
-                    data-aos-delay="1200"
-                  >
-                    <Palette className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
-                  </div>
-                  <div
-                    className="absolute top-1/2 -left-8 p-2 sm:p-3 bg-rose-600 rounded-full shadow-lg animate-float delay-500"
-                    data-aos="fade-right"
-                    data-aos-delay="1400"
-                  >
-                    <Smartphone className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
-                  </div>
-                  <div
-                    className="absolute -bottom-8 right-1/2 translate-x-1/2 p-2 sm:p-3 bg-rose-700 rounded-full shadow-lg animate-float delay-500"
-                    data-aos="fade-up"
-                    data-aos-delay="1600"
-                  >
-                    <Cpu className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                   </div>
                 </div>
               </div>

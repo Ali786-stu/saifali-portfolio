@@ -54,20 +54,7 @@
     </style>
   </head>
   <body>
-    <div id="loading" class="loading-screen">
-      <div class="loading-spinner"></div>
-    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      // Remove loading screen once page loads
-      window.addEventListener('load', () => {
-        const loading = document.getElementById('loading');
-        loading.classList.add('fade-out');
-        setTimeout(() => {
-          loading.remove();
-        }, 500);
-      });
-    </script>
   </body>
 </html>
