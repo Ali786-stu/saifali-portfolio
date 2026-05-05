@@ -95,14 +95,23 @@ const Hero = () => {
 
   return (
     <>
-      <section className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden bg-[#5f265f]/40 text-white">
-        {/* Background Elements */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
+      <section className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden bg-[#030303] text-white">
+        {/* Fullscreen Cinematic Video Background */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
+        >
+          <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4" type="video/mp4" />
+        </video>
+
+        {/* Overlay to ensure readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#030303]/60 via-transparent to-[#030303]/80 z-0"></div>
+
         {/* Main Hero Section */}
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div
             className={`grid lg:grid-cols-2 gap-12 items-center min-h-screen transform transition-all duration-1000 ${
               isVisible
@@ -111,44 +120,37 @@ const Hero = () => {
             }`}
           >
             {/* Left Content */}
-            <div className="text-center lg:text-left">
+            <div className="text-center lg:text-left pt-5 md:pt-0">
               <div className="mb-8">
                 <div
                   className="inline-block px-4 py-2 bg-blue-900/30 text-blue-400 rounded-full text-sm font-medium mb-6"
                   data-aos="fade-down"
-                  data-aos-duration="1000"
                 >
                   👋 Welcome to my portfolio
                 </div>
 
                 <h1
-                  data-cursorpointer={true}
-                  className="text-2xl md:text-6xl lg:text-5xl font-bold text-white mb-6 leading-tight"
+                  className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
                   data-aos="fade-right"
-                  data-aos-duration="1200"
                 >
                   Hi, I'm{" "}
                   <span
-                    data-cursorpointer={true}
-                    className="text-[40px] lg:text-7xl text-yellow-500 bg-clip-text text-transparent"
+                    className="text-yellow-500"
                     data-aos="zoom-in"
-                    data-aos-delay="400"
                   >
                     SAIF ALI
                   </span>
                 </h1>
 
                 <div
-                  data-cursorpointersm={true}
                   className="text-xl md:text-2xl text-gray-300 mb-4 h-8 font-bold"
                   data-aos="fade-left"
-                  data-aos-delay="600"
                 >
                   {text}
                   <span className="animate-blink">|</span>
                 </div>
 
-                <div className="h-6 mb-8 flex justify-center md:md:justify-start">
+                <div className="h-6 mb-8 flex justify-center lg:justify-start">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={skills[currentSkill]}
@@ -167,10 +169,8 @@ const Hero = () => {
                 </div>
 
                 <p
-                  data-cursorpointerText={true}
-                  className="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8"
+                  className="text-lg text-gray-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8 px-4 md:px-0"
                   data-aos="fade-up"
-                  data-aos-delay="800"
                 >
                   I'm a passionate developer who loves creating beautiful,
                   functional, and user-friendly digital experiences. With
@@ -178,10 +178,10 @@ const Hero = () => {
                   individuals bring their digital visions to life.
                 </p>
 
+                {/* Tech Badges Row */}
                 <div
-                  className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8"
+                  className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8 px-2 md:px-0"
                   data-aos="fade-up"
-                  data-aos-delay="1000"
                 >
                   {[
                     { tech: "HTML", icons: "logos:html-5" },
@@ -199,17 +199,10 @@ const Hero = () => {
                   ].map((obj, index) => (
                     <div
                       key={index}
-                      data-cursorpointerMini={true}
-                      className="px-3 py-1 flex items-center gap-1 bg-gray-800 text-gray-300 rounded-full text-sm font-medium"
-                      data-aos="zoom-in"
-                      data-aos-delay={index * 100}
+                      className="px-3 py-1 flex items-center gap-1 bg-gray-800/80 backdrop-blur-sm text-gray-300 rounded-full text-sm font-medium border border-gray-700/50"
                     >
-                      <Icon
-                        icon={obj.icons}
-                        data-cursorpointerMini={true}
-                        className="text-lg"
-                      />
-                      <span data-cursorpointerMini={true}>{obj.tech}</span>
+                      <Icon icon={obj.icons} className="text-lg" />
+                      <span>{obj.tech}</span>
                     </div>
                   ))}
                 </div>
@@ -218,11 +211,9 @@ const Hero = () => {
               <div
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12"
                 data-aos="fade-up"
-                data-aos-delay="1200"
               >
                 <button
                   onClick={handleMail}
-                  data-cursorpointer={true}
                   className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2"
                 >
                   <Mail size={20} />
@@ -231,7 +222,6 @@ const Hero = () => {
 
                 <button
                   onClick={handleDownload}
-                  data-cursorpointer={true}
                   className="px-8 py-4 border-2 border-gray-600 text-gray-300 font-semibold rounded-full hover:bg-yellow-600 hover:scale-105 transition-all duration-300 flex items-center gap-2"
                 >
                   <Download size={20} />
@@ -239,10 +229,10 @@ const Hero = () => {
                 </button>
               </div>
 
+              {/* Social Icons Row */}
               <div
-                className="flex justify-center lg:justify-start space-x-6"
+                className="flex justify-center lg:justify-start space-x-6 mb-12 lg:mb-0"
                 data-aos="zoom-in-up"
-                data-aos-delay="1400"
               >
                 {[
                   {
@@ -267,23 +257,22 @@ const Hero = () => {
                       key={index}
                       href={social.href}
                       aria-label={social.label}
-                      data-cursorpointerMini={true}
-                      className="p-3 hover:bg-yellow-500 bg-blue-950 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300 text-gray-300 hover:text-white"
+                      className="p-3 hover:bg-yellow-500 bg-blue-950/50 backdrop-blur-sm rounded-full shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300 text-gray-300 hover:text-white border border-white/10"
                     >
-                      <IconComponent data-cursorpointerMini={true} size={24} />
+                      <IconComponent size={24} />
                     </a>
                   );
                 })}
               </div>
             </div>
             
-            {/* Right Content - Orbital Tech Profile */}
+            {/* Right Content - Orbital Tech Profile (Now at top on mobile) */}
             <div
-              className="flex justify-center lg:justify-end lg:mr-11 max-md:-order-1 mb-12 lg:mb-0"
+              className="flex justify-center lg:justify-end lg:mr-11 max-md:-order-1 mb-8 lg:mb-0 pt-5 md:pt-0"
               data-aos="fade-left"
               data-aos-duration="1200"
             >
-              <div className="relative flex items-center justify-center scale-90 sm:scale-100">
+              <div className="relative flex items-center justify-center scale-75 sm:scale-90 md:scale-100">
                 {/* Outer Tech Ring (Counter-Clockwise) */}
                 <motion.div 
                   animate={{ rotate: -360 }}
@@ -348,64 +337,9 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div
-          className={`max-w-7xl mx-auto pb-20 pt-5 transform transition-all duration-1000 delay-500 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-          }`}
-          data-aos="fade-up"
-          data-aos-duration="1200"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <motion.div
-                  key={index}
-                  className=""
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ y: -5 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  data-aos="zoom-in"
-                  data-aos-delay={index * 200}
-                >
-                  <div
-                    onClick={() => {
-                      navigate(stat.link);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                    data-cursorpointer={true}
-                    className="cursor-pointer group text-center p-6 bg-gray-800/50 hover:bg-orange-500 backdrop-blur-sm rounded-2xl border border-gray-700/50 hover:scale-105 transition-all duration-300"
-                  >
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:from-black group-hover:to-rose-600 text-white rounded-full mb-4">
-                      <IconComponent size={24} data-cursorpointerText={true} />
-                    </div>
-                    <div
-                      data-cursorpointerText={true}
-                      className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-pink-800"
-                    >
-                      {stat.number}
-                    </div>
-                    <div
-                      data-cursorpointerText={true}
-                      className="text-sm line-clamp-1 text-gray-300 group-hover:text-white font-bold"
-                    >
-                      {stat.label}
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-
         <button
           onClick={handleScrollDown}
-          className="absolute z-10 bottom-3 left-1/2 transform -translate-x-1/2 p-2 text-gray-400 hover:text-gray-200 transition-colors animate-bounce"
-          data-aos="fade-up"
-          data-aos-delay="1000"
+          className="absolute z-10 bottom-3 left-1/2 transform -translate-x-1/2 p-2 text-gray-400 hover:text-white transition-colors animate-bounce"
         >
           <ChevronDown size={32} />
         </button>

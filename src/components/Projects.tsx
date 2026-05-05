@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import ProjectModal from "./ProjectModal";
-import img1 from "../assets/image1.png";
-import workWhiz from "../assets/image2.png";
-import zaphira from "../assets/image4.png";
-import expenseTracker from "../assets/image5.png";
-import aligFoundation from "../assets/image6.png";
-import avadhMedicalHall from "../assets/avadhMedicalHall.png";
-import doctorApp from "../assets/image3.png";
+import img1 from "../project-img/1.png";
+import img2 from "../project-img/2.png";
+import img3 from "../project-img/3.png";
+import img4 from "../project-img/4.png";
+import img5 from "../project-img/5.png";
+import img6 from "../project-img/6.png";
+import img7 from "../project-img/7.png";
+import img8 from "../project-img/8.png";
+import img9 from "../project-img/9.png";
+import img10 from "../project-img/10.png";
+import img11 from "../project-img/11.png";
+import img12 from "../project-img/12.png";
 import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
@@ -18,165 +23,171 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "FlipKart",
-      description:
-        "A modern e-commerce platform with advanced features and smooth user experience.",
-      fullDescription:
-        "Built a responsive Flipkart e-commerce clone using HTML, CSS, JavaScript, and Bootstrap, replicating the core design and functionality of the popular shopping platform.",
-      image: img1,
-      technologies: [
-        "HTML",
-        "CSS",
-        "Js",
-        // "RazorPay",
-        "Tailwind CSS",
-      ],
-      githubUrl: "https://git@github.com:Ali786-stu/Clone-Apple-website.git",
-      liveUrl: "fpkart-d14fef.netlify.app",
-      category: "Frontend",
-      duration: "3 Days",
+      title: "IslamEasy",
+      description: "A platform focused on Islamic education and resources.",
+      fullDescription: "Created a clean, resource-heavy website for Islamic learning and guidance.",
+      image: img10,
+      technologies: ["React", "Tailwind", "Responsive Design", "Lucide"],
+      githubUrl: "https://github.com/Ali786-stu/pathfornekki",
+      liveUrl: "https://pathfornekki.vercel.app/",
+      category: "web",
+      duration: "1 Month",
       status: true,
-      features: [
-        "Homepage Layout",
-        "Responsive Design",
-        "Product Display Sections",
-        "Modern UI/UX",
-        "Interactive Frontend",
-      ],
+      features: ["Resource Library", "Clean Navigation", "Educational Content"],
     },
     {
       id: 2,
-      title: "Ice-Cream",
-      description:
-        "Developed a fully responsive clone of the Vadilal Ice Cream website using HTML, CSS, and JavaScript. The project replicates the modern design, product sections, and interactive UI of the original site.",
-      fullDescription:
-        "Implemented background sliders, product showcases, and navigation menus to provide a smooth browsing experience. This project highlights my ability to recreate real-world brand websites with attention to design, responsiveness, and user experience.",
-      image: workWhiz,
-      technologies: ["HTML", "CSS", "Js", "Material-UI"],
-      githubUrl: "https://github.com/Ali786-stu?tab=repositories",
-      liveUrl: "cheerful-brigadeiros-967262.netlify.app",
-      category: "Frontend",
-      duration: "4 Days",
-      status: false,
-      features: [
-        "Product Showcase Section",
-        "Navigation Menu",
-        "Interactive Elements",
-        "Background Slider",
-        "Modern UI/UX",
-      ],
+      title: "Tulkash Cab",
+      description: "A premium cab booking and transport management system.",
+      fullDescription: "Developed a professional cab service website with route calculation and booking management.",
+      image: img2,
+      technologies: ["Full Stack", "PHP", "Laravel", "React"],
+      githubUrl: "https://github.com/Ali786-stu/Tulkash-Cab-Rental",
+      liveUrl: "https://cab.tulkash.com/",
+      category: "web",
+      duration: "2 Months",
+      status: true,
+      features: ["Booking Engine", "Real-time Pricing", "Mobile Optimized"],
     },
     {
       id: 3,
-      title: "Integral University Lucknow",
-      description:
-        "Developed a responsive clone of the Integral University official website using HTML, CSS, JavaScript, and Bootstrap, focusing on design accuracy and smooth navigation.",
-      fullDescription:
-        "Created a responsive clone of the Integral University website using HTML, CSS, JavaScript, and Bootstrap. The project replicates the design, navigation, and layout of the official site, including academic sections, image sliders, and a structured navigation bar. It demonstrates skills in front-end development, responsive design, and UI/UX implementation.",
-      image: doctorApp, // import or path to your project image
-      technologies: ["HTML", "CSS", "Js", "Tailwind CSS"],
-      githubUrl: "https://github.com/Ali786-stu?tab=repositories",
-      liveUrl: "integral-university-9cd2b3.netlify.app",
-      category: "Frontend",
-      duration: "2 Days",
+      title: "Brobie",
+      description: "A modern e-commerce platform for lifestyle and fashion.",
+      fullDescription: "Designed and developed a full-featured e-commerce store with product management and secure checkout.",
+      image: img3,
+      technologies: ["Full Stack", "PHP", "Laravel", "React"],
+      githubUrl: "https://github.com/Ali786-stu/brob-ie",
+      liveUrl: "https://www.brobie.com/",
+      category: "web",
+      duration: "3 Weeks",
       status: true,
-      features: [
-        "Homepage Layout",
-        "Academic Sections",
-        "Navigation Bar",
-        "Image Slider/Banner",
-        "Modern Styling",
-        "Responsive Design",
-      ],
+      features: ["Product Management", "Shopping Cart", "Responsive Design"],
     },
-
     {
       id: 4,
-      title: "E-Commerce Platform",
-      description:
-        "The project includes product catalogs, search functionality, and a cart system to provide an interactive user shopping experience.",
-      fullDescription:
-        "Developed a fully functional e-commerce website using HTML, CSS, JavaScript, and Bootstrap, designed to replicate real-world online shopping platforms. The project includes product catalogs, search functionality, and a cart system to provide an interactive user shopping experience.",
-      image: zaphira,
-      technologies: ["HTML", "CSS", "Js", "Tailwind CSS"],
-      githubUrl: "https://github.com/Ali786-stu?tab=repositories",
-      liveUrl: "fantastic-e-commerce-979870.netlify.app",
-      category: "Frontend",
-      duration: "3 Days",
+      title: "Luxury Wedding Photography",
+      description: "A high-end gallery for premium wedding photography services.",
+      fullDescription: "A cinematic photography portfolio featuring high-resolution galleries and booking integrations.",
+      image: img4,
+      technologies: ["Frontend", "React", "Tailwind", "Lucide"],
+      githubUrl: "https://github.com/Ali786-stu/Studio-Luxury",
+      liveUrl: "https://studio-luxury.vercel.app/",
+      category: "web",
+      duration: "1 Month",
       status: true,
-      features: [
-        "Product Catalog",
-        "Search & Filter Options",
-        "Shopping Cart",
-        "Modern UI/UX",
-        "Interactive Elements",
-      ],
+      features: ["Image Galleries", "Cinematic Layout", "Contact Forms"],
     },
     {
       id: 5,
-      title: "Text to Speech Convertor",
-      description:
-        "A project that captures spoken audio input and converts it into written text using speech recognition APIs or libraries. It enables hands-free typing and improves productivity.",
-      fullDescription:
-        "A web-based tool that converts written text into natural-sounding speech using JavaScript, Web Speech API (or Python libraries). This project helps users listen to text content instead of reading it, making it useful for accessibility and learning purposes.",
-      image: expenseTracker,
-      technologies: ["HTML", "CSS", "Js"],
-      githubUrl: "https://github.com/Ali786-stu?tab=repositories",
-      liveUrl: "stupendous-pegasus-b0e431.netlify.app",
-      category: "Frontend",
-      duration: "1 Day",
+      title: "Hygifeel A Doctor's Choice",
+      description: "A professional medical and healthcare product showcase.",
+      fullDescription: "Created a trust-focused healthcare platform for medical professionals and their patients.",
+      image: img5,
+      technologies: ["Full Stack", "PHP", "Laravel", "MySQL"],
+      githubUrl: "https://github.com/Ali786-stu/Hygifeel",
+      liveUrl: "https://hygifeel.vercel.app/",
+      category: "web",
+      duration: "1 Month",
       status: true,
-      features: [
-        "Learning Support",
-        "Time-Saving",
-        "Hands-Free Typing",
-        "Productivity Boost",
-        "Accessibility",
-      ],
+      features: ["Product Catalog", "Healthcare Information", "Responsive UI"],
     },
     {
       id: 6,
-      title: "Red Cayenne Rastaurant",
-      description:
-        "Coaching platform guiding students with quality education & mentorship.",
-      fullDescription:
-        "Developed a responsive restaurant website using HTML, CSS, JavaScript, and Bootstrap to showcase menu items, restaurant details, and online reservation options. The project focuses on modern UI/UX, easy navigation, and interactive design to enhance customer engagement.",
-      image: aligFoundation,
-      technologies: ["HTML", "Vanilla CSS", "Js"],
-      githubUrl: "https://github.com/Ali786-stu?tab=repositories",
-      liveUrl: "red-rastaurant.netlify.app",
-      category: "Frontend",
-      duration: "5 Days",
+      title: "Luxury Laundry & Dry Cleaning",
+      description: "A premium service website for high-end garment care.",
+      fullDescription: "Developed a luxury laundry service platform with integrated pricing and service details.",
+      image: img6,
+      technologies: ["Frontend", "React", "Framer Motion", "Tailwind"],
+      githubUrl: "https://github.com/Ali786-stu/laundrylux",
+      liveUrl: "https://luxelaundry.vercel.app/",
+      category: "web",
+      duration: "2 Weeks",
       status: true,
-      features: [
-        "Interactive Menu Section",
-        "Image Slider/Gallery",
-        "Online Reservation",
-        "Modern UI/UX",
-      ],
+      features: ["Service Pricing", "Booking Options", "Premium Aesthetics"],
     },
     {
       id: 7,
-      title: "Avadh Medical Hall & Skin Care",
-      description:
-        "A skin care clinic in Ayodhya offering appointments, treatment plans, and product services online.",
-      fullDescription:
-        "Avadh Medical Hall is a skin care and medical hall website. It allows patients to view services (like Acne, Vitiligo, Rosacea etc.), make an appointment, contact via phone or email, and view transformations and about us info. Built using React, TypeScript, Firebase for managing appointment data and authentication.",
-      image: avadhMedicalHall, // import this in your code
-      technologies: ["React", "TypeScript", "Firebase", "CSS / Tailwind / MUI"],
-      githubUrl: "https://github.com/yourusername/avadh-medical-hall", // if available
-      liveUrl: "https://avadhmedicalhall.com/",
+      title: "Defence Academy",
+      description: "An educational platform for defense training and coaching.",
+      fullDescription: "A comprehensive website for a defense academy featuring course details and student registration.",
+      image: img7,
+      technologies: ["Full Stack", "PHP", "Laravel", "MySQL"],
+      githubUrl: "https://github.com/Ali786-stu/Defence-Academy",
+      liveUrl: "https://defence-academy.vercel.app/",
       category: "web",
-      duration: "2 months",
+      duration: "1.5 Months",
       status: true,
-      features: [
-        "Make Appointment online",
-        "View Services and About Us sections",
-        "Contact via phone/email integration",
-        "Transformations gallery",
-        "Firebase backend for storing appointments",
-        "Responsive design",
-      ],
+      features: ["Course Management", "Student Registration", "Information Hub"],
+    },
+    {
+      id: 8,
+      title: "Expense Tracker Pro",
+      description: "A powerful financial management tool for tracking expenses.",
+      fullDescription: "Built a modern financial application that helps users manage their budget and track daily expenses with charts.",
+      image: img8,
+      technologies: ["Frontend", "React", "Chart.js", "Tailwind"],
+      githubUrl: "https://github.com/Ali786-stu/Modern-Expense-Tracker-Web-App",
+      liveUrl: "https://modern-expense-tracker-web-app.vercel.app/",
+      category: "app",
+      duration: "3 Weeks",
+      status: true,
+      features: ["Expense Analytics", "Budget Management", "Data Persistence"],
+    },
+    {
+      id: 9,
+      title: "PDF Merger",
+      description: "A handy tool for merging multiple PDF files quickly.",
+      fullDescription: "Developed a web-based PDF utility that allows users to upload and merge PDF documents seamlessly.",
+      image: img9,
+      technologies: ["Frontend", "React", "JavaScript", "PDF-Lib"],
+      githubUrl: "https://github.com/Ali786-stu/PDF-Merger",
+      liveUrl: "https://pdf-merger-two-eta.vercel.app/",
+      category: "app",
+      duration: "2 Weeks",
+      status: true,
+      features: ["File Upload", "PDF Processing", "Instant Download"],
+    },
+    {
+      id: 10,
+      title: "RepairWallah",
+      description: "A comprehensive service platform for home repairs and maintenance.",
+      fullDescription: "Built a robust service marketplace for home repairs, featuring service categories and an easy booking interface.",
+      image: img1,
+      technologies: ["Full Stack", "PHP", "Laravel", "MySQL"],
+      githubUrl: "#",
+      liveUrl: "https://repaiirwallah-web.vercel.app/",
+      category: "web",
+      duration: "1 Month",
+      status: true,
+      features: ["Service Categories", "Booking System", "Responsive Design"],
+    },
+    {
+      id: 11,
+      title: "E-Patang",
+      description: "A digital marketplace or platform for kite enthusiasts.",
+      fullDescription: "Developed a unique web platform dedicated to kite flying culture and community resources.",
+      image: img11,
+      technologies: ["Full Stack", "PHP", "Laravel", "React"],
+      githubUrl: "https://github.com/Ali786-stu/e-patang",
+      liveUrl: "https://e-patang.vercel.app/",
+      category: "web",
+      duration: "3 Weeks",
+      status: true,
+      features: ["Interactive UI", "Community Resources", "Responsive Design"],
+    },
+    {
+      id: 12,
+      title: "Ember Arts",
+      description: "A premium portfolio or gallery for artistic works.",
+      fullDescription: "A sophisticated art gallery website showcasing premium furniture and artistic designs.",
+      image: img12,
+      technologies: ["Frontend", "React", "Tailwind", "Premium CSS"],
+      githubUrl: "https://github.com/Ali786-stu/ember-arts",
+      liveUrl: "https://ember-arts.vercel.app/",
+      category: "web",
+      duration: "1 Month",
+      status: true,
+      features: ["Artistic Layout", "High-quality Imagery", "Smooth Transitions"],
     },
   ];
 
@@ -191,8 +202,15 @@ const Projects = () => {
 
   return (
     <>
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#23324b] min-h-screen">
-        <div className="max-w-7xl mx-auto" data-aos="fade-up">
+      <section className="projects-bg py-20 px-4 sm:px-6 lg:px-8 min-h-screen relative overflow-hidden">
+        {/* Animated Background Layers */}
+        <div className="mesh-gradient"></div>
+        <div className="tech-grid"></div>
+        <div className="scanner-line"></div>
+        <div className="glow-orb top-[-10%] left-[-10%]"></div>
+        <div className="glow-orb bottom-[-10%] right-[-10%]" style={{ animationDelay: "-5s" }}></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10" data-aos="fade-up">
           <div
             className="text-center mb-16"
             data-aos="zoom-in"
@@ -200,22 +218,21 @@ const Projects = () => {
           >
             <h2
               data-cursorpointer={true}
-              className="text-4xl md:text-5xl font-bold text-orange-600 mb-6"
+              className="text-4xl md:text-5xl font-bold text-blue-500 mb-6"
             >
-              My{" "}
+              Masterpiece{" "}
               <span
                 data-cursorpointer={true}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
               >
-                Projects
+                Collection
               </span>
             </h2>
             <p
               data-cursorpointerText={true}
-              className="text-xl text-yellow-400 max-w-3xl mx-auto font-bold"
+              className="text-xl text-gray-400 max-w-3xl mx-auto font-medium"
             >
-              Here are some of my recent projects that showcase my skills in web
-              development.
+              A showcase of premium full-stack solutions and high-performance digital experiences.
             </p>
           </div>
 
