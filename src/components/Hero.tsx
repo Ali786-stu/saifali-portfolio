@@ -13,7 +13,7 @@ import {
   Coffee,
   Cpu,
 } from "lucide-react";
-import myCV from "../assets/saif_Resume.pdf";
+import myCV from "../assets/Saif_Ali-resume.pdf";
 import { AnimatePresence, motion } from "framer-motion";
 import myPic from "../assets/heroMainlogo.png";
 import { useNavigate } from "react-router-dom";
@@ -79,7 +79,7 @@ const Hero = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = myCV;
-    link.download = "saif_Resume.pdf";
+    link.download = "Saif_Ali-resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
